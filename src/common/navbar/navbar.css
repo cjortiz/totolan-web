@@ -1,0 +1,128 @@
+.header-container {
+  background-color: #f5f5f5;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-container {
+  width: 2.5rem;
+  height: 3.5rem;
+  position: relative;
+  border-radius: 2.5rem;
+  animation: shrinkAndBounce 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+  box-shadow: 0rem 0.125rem 0.25rem 0rem rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.nav-search-container:hover {
+  border: 0.063rem solid var(--gray-10);
+}
+.nav-search-container.expand {
+  width: 25rem;
+  animation: expandAndBounceIn 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+  border: 0.063rem solid var(--gray-10);
+  pointer-events: none;
+}
+
+.nav-search-box {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  height: 3.5rem;
+  transition: opacity 0.1s ease-in;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+}
+
+.nav-search-box .ant-select-selector {
+  width: 100%;
+}
+
+.nav-search-box .ant-select-selector .ant-select-selection-search {
+  align-self: center;
+}
+
+.nav-search-box.show {
+  pointer-events: all;
+}
+.nav-search-box .sirius-clear {
+  display: none;
+}
+.nav-search-box .sirius-navbar-close:hover {
+  background-color: var(--white-03);
+  border-radius: 50%;
+}
+.nav-search-container.expand .ant-input-prefix {
+  transform: scaleX(-1);
+  transition: transform 0.3s ease-in-out;
+}
+.nav-search-container.expand .ant-input::placeholder {
+  font-size: 0.75rem;
+  color: var(--gray-04);
+  font-weight: var(--light);
+}
+
+.nav-search-box .sirius-clear {
+  display: none;
+}
+
+.nav-search-container.expand
+  .ant-input.ant-input-borderless:not([value=""])
+  + .ant-input-suffix
+  .sirius-clear {
+  display: block;
+  margin-top: 0.313rem;
+  cursor: pointer;
+}
+@media only screen and (max-width: 45rem) {
+  @keyframes expandAndBounceIn {
+    0% {
+      width: 2.5rem;
+    }
+    50% {
+      width: 15.875rem;
+    }
+    100% {
+      width: 12.75rem;
+    }
+  }
+
+  @keyframes shrinkAndBounce {
+    0% {
+      width: 12.75rem;
+    }
+    50% {
+      width: 2.5rem;
+    }
+    100% {
+      width: 2.5rem;
+    }
+  }
+}
+@keyframes expandAndBounceIn {
+    0% {
+      width: 2.5rem;
+    }
+    50% {
+      width: 21.875rem;
+    }
+    100% {
+      width: 18.75rem;
+    }
+  }
+  
+  @keyframes shrinkAndBounce {
+    0% {
+      width: 18.75rem;
+    }
+    50% {
+      width: 2.5rem;
+    }
+    100% {
+      width: 2.5rem;
+    }
+  }

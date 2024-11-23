@@ -1,0 +1,44 @@
+.summary-modal .ant-modal-content .ant-modal-close {
+  margin-top: 7px;
+}
+
+.summary-modal .ant-modal-header .ant-modal-title {
+  margin-top: 7px;
+}
+
+/* DARK MODE */
+.summary-modal.dark .ant-modal-content,
+.summary-modal.dark .ant-modal-header,
+.summary-modal.dark .ant-modal-body {
+  background: var(--black-02);
+}
+
+.summary-modal.dark .ant-modal-header {
+  border-bottom: 0.063rem solid var(--black-07);
+}
+
+.summary-modal.dark .ant-modal-title {
+  color: var(--white-10);
+}
+
+.summary-modal.dark .ant-modal-close-x path {
+  fill: var(--white-10);
+}
+
+.summary-modal.dark .ant-modal-body .ant-typography {
+  color: var(--white-10);
+}
+
+.summary-modal.dark .columnStyle {
+  color: var(--white-01);
+}
+
+.summary-modal.dark .valueStyle {
+  color: var(--white-10);
+}
+
+@media only screen and (max-width: 45rem) {
+  .summary-modal {
+    width: 50% !important;
+  }
+}

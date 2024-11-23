@@ -1,0 +1,93 @@
+{
+ "student":{
+  "studentListTitle":"Students List",
+  "studentsNewTitle":"Add New Student Details",
+  "tableTitles":{
+    "idNumber":"ID #" ,
+    "name": "Student Name",
+    "age": "Age",
+    "gradeYear":"Grade Year",
+    "sex":"Gender"
+  },
+  "details":{
+    "firstName" : "First Name",
+    "middleName":"Middle Name",
+    "lastName": "Last Name",
+    "age": "Age",
+    "gender": "Gender",
+    "address":"Address",
+    "birthDate":"Birth Date",
+    "contactNum": "Contact Number",
+    "mothersName": "Mother's Name",
+    "fathersName": "Father's Name",
+    "idNumber":"ID #",
+    "studentName": "Student Name"
+  }
+ },
+ "common": {
+  "gender":{
+    "male": "Male",
+    "female":"Female"
+  },
+  "upload":"Upload Image",
+  "selectOption": "Select Option",
+  "RESET":"Reset",
+  "list": "List",
+  "time": "Time",
+  "SEARCH":"Search",
+    "moreFilter":"More Filter",
+    "companyId": "Company ID",
+    "record": "record",
+    "submit": "SUBMIT",
+    "error": "Internal Server Error",
+    "somethingWentWrong": "Something went wrong.",
+    "yes": "Yes",
+    "no": "No",
+    "reload": "Reload",
+    "new": "New",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "close": "Close",
+    "clear": "Clear",
+    "batchSelect": "Batch Select",
+    "options": "Options",
+    "OK": "OK",
+    "ok": "Ok",
+    "save": "Save",
+    "CANCEL": "CANCEL",
+    "SAVE": "SAVE",
+    "ASSIGN": "ASSIGN",
+    "CLEAR": "CLEAR",
+    "CLOSE": "CLOSE",
+    "SELECT": "SELECT",
+    "noRecordFound": "No records found.",
+    "summary": "Summary",
+    "keyword": "Keyword",
+    "select": "Select",
+    "search": "Search",
+    "createdBy": "Created By",
+    "createdDate": "Created Date",
+    "updatedBy": "Updated By",
+    "updatedDate": "Updated Date",
+    "updated": "Updated",
+    "active": "Active",
+    "password": "Password",
+    "email": "Email",
+    "textarea": "Input Field",
+    "date": "Date",
+    "noDataAvailable": "No Data Available",
+    "siriusModalTitle": "Sirius Modal Title",
+    "selections":{
+      "onehunder": "100",
+      "fifty": "50",
+      "twenty": "20"
+    }
+  },
+  "errorMessage":{
+    "invalidImageType": "The image must be a file of type: jpeg, jpg, png, gif, svg, webp",
+    "invalidImageSize": "Please select file that is not more than 2048KB"
+    
+  }
+ 
+}

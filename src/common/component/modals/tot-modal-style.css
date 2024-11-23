@@ -1,0 +1,48 @@
+.tot-modal .ant-modal-header .ant-modal-title,
+.tot-modal .ant-modal-close-x {
+  margin-top: 0.313rem;
+}
+
+@media only screen and (max-width: 45rem) {
+  /* Modal */
+  .tot-modal .ant-modal-body .ant-col {
+    display: block !important;
+  }
+
+  .tot-modal .ant-card-body {
+    padding-right: 0rem;
+  }
+
+  .tot-modal
+    .ant-card.ant-card-bordered.tot-card.details-layout-card.tot-scrollbar.view {
+    overflow-x: hidden;
+  }
+
+  .tot-modal .ant-divider.ant-divider-horizontal {
+    width: 36rem !important;
+  }
+
+  .tot-modal .tot-input-element.tot-read-only#title {
+    width: 19rem !important;
+  }
+
+  .tot-modal .tot-input-element.tot-read-only#firstName {
+    width: 19rem !important;
+  }
+
+  .tot-modal .tot-input-element.tot-read-only#lastName {
+    width: 19rem !important;
+  }
+
+  .tot-modal .tot-input-element.tot-read-only#middleName {
+    width: 19rem !important;
+  }
+
+  .tot-modal .tot-input-element.tot-read-only#extension {
+    width: 19rem !important;
+  }
+
+  .tot-modal .image-container {
+    margin-left: -19rem;
+  }
+}

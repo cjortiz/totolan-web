@@ -1,0 +1,70 @@
+.tot-drawer .ant-drawer-header {
+  padding-top: 1.625rem;
+  border-bottom: 0.063rem solid var(--white-01);
+}
+
+.tot-drawer .ant-drawer-header .ant-drawer-close .anticon.anticon-close {
+  margin-bottom: 0.313rem;
+}
+
+.tot-drawer .ant-drawer-body {
+  padding: 0;
+}
+
+.tot-drawer .ant-drawer-title {
+  color: var(--gray-01);
+  font-size: var(--font-large);
+  font-style: normal;
+  font-weight: var(--medium);
+  line-height: normal;
+  margin-top: -0.313rem;
+  user-select: none;
+}
+
+.tot-drawer .ant-divider-horizontal {
+  width: 105%;
+  border-color: var(--gray-01);
+  opacity: 0.1;
+}
+
+.tot-drawer-buttons {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 2.5rem 5.5rem;
+  gap: 1.25rem;
+  background-color: var(--white-10);
+}
+
+.tot-drawer-buttons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5%;
+  right: -1.5%;
+  height: 0.075rem;
+  background-color: var(--white-01);
+}
+
+.tot-more-filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tot-more-filter-btn.dark .ant-typography {
+  color: var(--white-10) !important;
+}
+
+.tot-more-filter-btn.dark path {
+  fill: var(--white-10);
+}
+
+@media only screen and (max-width: 720px) {
+  .tot-drawer .ant-drawer-content-wrapper {
+    width: 25rem !important;
+  }
+}

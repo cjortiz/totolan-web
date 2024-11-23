@@ -1,0 +1,130 @@
+#root {
+  width: 100%;
+  height: 100%;
+  /* Primary Colors */
+  --primary-01: #77000b;
+  --primary-02: #940714;
+  --primary-03: #c10000;
+  --primary-04: #e60000;
+  --primary-05: #ff0000;
+  --primary-06: #ff3f3f;
+  --primary-07: #ff8f8f;
+  --primary-08: #f9cccc;
+  --primary-09: #fbd9d9;
+  --primary-10: #ffeaea;
+
+  /* Secondary Colors */
+  --secondary-01: #143568;
+  --secondary-02: #103e86;
+  --secondary-03: #12479a;
+  --secondary-04: #0f51b9;
+  --secondary-05: #0a5ad8;
+  --secondary-06: #0063ff;
+  --secondary-07: #2379ff;
+  --secondary-08: #5899ff;
+  --secondary-09: #2379ff;
+  --secondary-10: #9ec5ff;
+
+  /* Neutral Colors */
+  --black-01: #272d33;
+  --black-02: #273039;
+  --black-03: #2c353d;
+  --black-04: #303b45;
+  --black-05: #32404c;
+  --black-06: #32404d;
+  --black-07: #405263;
+  --black-08: #637381;
+  --black-09: #8a9eaf;
+  --black-10: #acb8c3;
+
+  --gray-01: #333333;
+  --gray-02: #444444;
+  --gray-03: #555555;
+  --gray-04: #666666;
+  --gray-05: #777777;
+  --gray-06: #888888;
+  --gray-07: #999999;
+  --gray-08: #aaaaaa;
+  --gray-09: #bbbbbb;
+  --gray-10: #cccccc;
+
+  --white-01: #dedede;
+  --white-02: #e6e6e6;
+  --white-03: #e8ebed;
+  --white-04: #ebebeb;
+  --white-05: #efefef;
+  --white-06: #f2f2f2;
+  --white-07: #f5f5f5;
+  --white-08: #f8f8f8;
+  --white-09: #fafbfe;
+  --white-10: #ffff;
+
+  --ease-out: "0.3s ease-out";
+
+  /* box shadows */
+  --button-shadow: 0rem 0.125rem 0.25rem 0rem rgba(0, 0, 0, 0.08);
+  --charts-shadow: 0rem 0.125rem 0.375rem 0rem rgba(13, 10, 44, 0.08);
+  --navbar-shadow: 0rem 0.125rem 0.625rem 0rem rgba(13, 10, 44, 0.1);
+
+  /* / font-weights / */
+  --light: 300;
+  --normal: 400;
+  --medium: 500;
+  --semibold: 600;
+
+  /* / font-sizes / */
+  --font-extra-small: 0.75rem;
+  --font-small: 0.875rem;
+  --default-size: 0.9375rem;
+  --font-large: 1rem;
+
+  /* Sidebar & Table Header Color */
+  --sidebar-tableheader-1: #004b8d;
+
+  --transition-bg-ease: background-color 0.8s ease;
+  --transition-text-ease: text 0.8s ease;
+  --transition-border-ease: border-color 0.8s ease;
+}
+
+body {
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

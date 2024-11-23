@@ -1,0 +1,38 @@
+.tot-modal.dark.ant-modal .ant-modal-header {
+  background: var(--black-02);
+  border-bottom: 0.0625rem solid var(--black-05);
+}
+
+.tot-modal.dark.ant-modal .ant-modal-title {
+  color: var(--white-10);
+}
+
+.tot-modal.dark.ant-modal .ant-modal-body {
+  background: var(--black-02);
+  border-radius: 0rem 0rem 0rem 0rem;
+}
+
+.tot-modal.dark.ant-modal .ant-modal-footer {
+  background: var(--black-02);
+  border-top: 0.0625rem solid var(--black-05);
+}
+
+.tot-modal.dark.ant-modal .ant-modal-close-x path {
+  fill: var(--black-10);
+}
+
+.tot-modal.dark.ant-modal .ant-list-item-meta-title {
+  color: var(--white-10);
+}
+
+.tot-modal.dark.ant-modal .ant-list-item-meta-description {
+  color: var(--gray-07);
+}
+
+.tot-modal.dark .ant-typography {
+  color: var(--white-10);
+}
+
+.tot-modal.dark .ant-modal-content {
+  background-color: var(--black-02);
+}

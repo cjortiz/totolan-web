@@ -1,0 +1,1626 @@
+/* prefix color & size */
+.tot-input-field.dark .ant-form-item-label .ant-typography {
+  color: var(--white-10);
+  font-size: var(--font-small);
+}
+
+/* prefix focused */
+.tot-input-field.dark .ant-form-item-label .focused {
+  color: var(--secondary-07);
+  font-size: var(--font-extra-small);
+}
+
+/* prefix visible */
+.tot-input-field.dark .ant-form-item-label .visible {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+/* read only */
+.tot-input-field.dark .ant-typography.tot-read-only {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+.tot-input-field.dark .tot-input-element:hover.tot-read-only,
+.tot-input-field.dark
+  .tot-input-element.ant-input-affix-wrapper:hover.tot-read-only {
+  border: 0.063rem solid var(--black-09);
+}
+
+.tot-input-field.dark .tot-input-element.focused.tot-read-only,
+.tot-input-field.dark
+  .tot-input-element.ant-input-affix-wrapper.focused.tot-read-only {
+  border: 0.063rem solid var(--black-09);
+}
+
+.tot-input-field.dark
+  .tot-input-element.tot-read-only
+  .ant-input-suffix
+  path {
+  fill: var(--white-10);
+}
+
+.tot-input-field.dark
+  .tot-input-element.focused.tot-read-only
+  .ant-input-prefix
+  path {
+  fill: var(--white-10);
+}
+
+/* prefix clicked */
+.tot-input-field.clicked.dark .ant-form-item-label {
+  transform: translateY(-100%) translateY(-0.738rem);
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  background-color: var(--black-02);
+  z-index: 1;
+  padding: 0rem 0.313rem;
+}
+
+/* error */
+.tot-input-field.dark .ant-form-item-explain-error {
+  color: var(--primary-05);
+  font-size: var(--font-extra-small);
+  font-weight: var(--light);
+}
+
+/* removed default error asterisk */
+.tot-input-field.dark
+  .ant-form-item-label
+  .ant-form-item-required.ant-form-item-no-colon::before {
+  display: none;
+}
+
+/* sublabel / help */
+.tot-input-field.dark
+  .ant-form-item-explain.ant-form-item-explain-connected {
+  font-weight: var(--light);
+  font-size: var(--font-extra-small);
+  font-style: normal;
+  color: var(--white-10);
+  padding-bottom: 0.938rem;
+}
+
+.tot-input-field.clicked.dark.ant-form-item-has-error
+  .ant-input-affix-wrapper-status-error {
+  box-shadow: none;
+}
+
+/* typography error */
+.tot-input-field.dark.ant-form-item-has-error
+  .ant-form-item-label
+  .ant-typography {
+  color: var(--primary-05);
+}
+
+/* suffix error */
+.tot-input-field.dark.ant-form-item-has-error
+  .tot-input-element
+  .ant-input-suffix
+  path {
+  fill: var(--primary-05);
+}
+
+/* INPUT ELEMENT */
+.tot-input-field.dark .tot-input-element {
+  background: none;
+  color: var(--white-10);
+  border: 0.063rem solid var(--black-09);
+}
+
+/* text color & size */
+.tot-input-field.dark .tot-input-element .ant-input {
+  background: none;
+  color: var(--white-10);
+}
+
+/* hover */
+.tot-input-field.dark .tot-input-element:hover,
+.tot-input-field.dark .tot-input-element.ant-input-affix-wrapper:hover {
+  border: 0.063rem solid var(--white-10);
+}
+
+/* focus */
+.tot-input-field.dark .tot-input-element.focused,
+.tot-input-field.dark .tot-input-element.ant-input-affix-wrapper.focused {
+  border: 0.063rem solid var(--secondary-07);
+  box-shadow: none;
+  z-index: 0;
+}
+
+/* disabled */
+.tot-input-field.dark
+  .tot-input-element:hover.ant-input-affix-wrapper-disabled {
+  border: 0.063rem solid var(--black-10);
+}
+
+/* input placeholder */
+.tot-input-field.dark .tot-input-element .ant-input::placeholder,
+.tot-input-field.dark .tot-input-element.ant-input::placeholder {
+  color: var(--white-10);
+  font-weight: var(--light);
+  font-size: var(--font-small);
+}
+
+/* prefix color */
+.tot-input-field.dark .tot-input-element .ant-input-prefix path {
+  fill: var(--white-10);
+}
+
+/* suffix color */
+.tot-input-field.dark .tot-input-element .ant-input-suffix path {
+  fill: var(--white-10);
+}
+
+/* suffix focused */
+.tot-input-field.dark .tot-input-element.focused path {
+  fill: var(--secondary-07);
+}
+
+/* error */
+.tot-input-field.dark
+  .tot-input-element.ant-input-affix-wrapper-status-error {
+  background: none;
+  border: 0.063rem solid var(--primary-05);
+}
+
+/* error hover */
+.tot-input-field.dark
+  .tot-input-element:hover.ant-input-affix-wrapper-status-error {
+  border: 0.063rem solid var(--primary-05);
+}
+
+/* error focused */
+.tot-input-field.dark
+  .tot-input-element.focused.ant-input-affix-wrapper-status-error {
+  border: 0.063rem solid var(--primary-05);
+}
+
+/* TEXTAREA */
+/* removed default error asterisk */
+.tot-input-field-textarea.dark
+  .ant-form-item-label
+  .ant-form-item-required.ant-form-item-no-colon::before {
+  display: none;
+}
+
+/* prefix color & size */
+.tot-input-field-textarea.dark .ant-form-item-label .ant-typography {
+  color: var(--white-10);
+  font-size: var(--font-small);
+}
+
+/* textarea prefix focused */
+.tot-input-field-textarea.dark .ant-form-item-label .focused {
+  color: var(--secondary-07);
+  font-size: var(--font-extra-small);
+}
+
+/* textarea prefix visible */
+.tot-input-field-textarea.dark .ant-form-item-label .visible {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+/* textarea read only */
+.tot-input-field-textarea.dark .ant-typography.tot-read-only {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+.tot-input-field-textarea.dark
+  .tot-input-element-textarea:hover.tot-read-only {
+  border: 0.063rem solid var(--black-09);
+}
+
+.tot-input-field-textarea.dark
+  .tot-input-element-textarea.focused.tot-read-only {
+  border: 0.063rem solid var(--black-09);
+}
+
+/* textarea prefix clicked */
+.tot-input-field-textarea.clicked.dark .ant-form-item-label {
+  transform: translateY(-100%) translateY(-0.625rem);
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  background-color: var(--black-02);
+  z-index: 1;
+  padding: 0rem 0.313rem;
+}
+
+/* textarea sublabel / help */
+.tot-input-field-textarea.dark
+  .ant-form-item-explain.ant-form-item-explain-connected {
+  font-weight: var(--light);
+  font-size: var(--font-extra-small);
+  font-style: normal;
+  color: var(--white-10);
+  padding-bottom: 0.938rem;
+}
+
+/* typography error */
+.tot-input-field-textarea.dark.ant-form-item-has-error
+  .ant-form-item-label
+  .ant-typography {
+  color: var(--primary-05);
+}
+
+/* --INPUT ELEMENT TEXTAREA STARTS */
+.tot-input-field-textarea.dark .tot-input-element-textarea {
+  background: none;
+  color: var(--white-10);
+  border: 0.063rem solid var(--black-09);
+}
+
+.tot-input-field-textarea.dark .tot-input-element-textarea.ant-input {
+  font-size: var(--font-small);
+  font-weight: var(--normal);
+  color: var(--white-10);
+  height: 6.25rem;
+  background: none;
+}
+
+.tot-input-field-textarea.dark .tot-input-element-textarea:hover {
+  border: 0.063rem solid var(--white-10);
+}
+
+.tot-input-field-textarea.dark .tot-input-element-textarea.focused {
+  border: 0.063rem solid var(--secondary-07);
+  box-shadow: none;
+  z-index: 0;
+}
+
+/* textarea disabled */
+.tot-input-field-textarea.dark
+  .tot-input-element-textarea.ant-input-disabled,
+.tot-input-field-textarea.dark
+  .tot-input-element-textarea:hover.ant-input-disabled {
+  border: 0.063rem solid var(--black-10);
+}
+
+/* textarea input placeholder */
+.tot-input-field-textarea.dark
+  .tot-input-element-textarea.ant-input::placeholder {
+  color: var(--white-10);
+  font-weight: var(--light);
+  font-size: var(--font-small);
+}
+
+/* char count */
+.tot-input-field-textarea.dark .tot-char-count {
+  position: absolute;
+  bottom: -0.625rem;
+  right: 0.625rem;
+  transform: translateY(-100%);
+  pointer-events: none;
+  color: var(--white-01);
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: var(--light);
+  padding: none;
+}
+
+.tot-input-field-textarea.dark
+  .tot-input-element-textarea.ant-input-textarea-show-count
+  .ant-input {
+  color: var(--white-10);
+}
+
+.tot-input-field-textarea.dark
+  .tot-input-element-textarea.ant-input-textarea-show-count::after {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.625rem;
+  transform: translateY(-100%);
+  pointer-events: none;
+  color: var(--white-01);
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: var(--light);
+  padding: none;
+}
+
+/* DROPDOWN */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select.ant-select-in-form-item
+  .ant-select-selector {
+  min-height: 2.813rem;
+  height: 100%;
+  border-radius: 0.375rem;
+  background: none;
+  color: var(--white-10);
+  border: 0.063rem solid var(--black-09);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* help / sublabel */
+.tot-form-item-dropdown.dark
+  .ant-form-item-explain.ant-form-item-explain-connected {
+  font-weight: var(--light);
+  font-size: var(--font-extra-small);
+  font-style: normal;
+  color: var(--white-10);
+  padding-bottom: 0.938rem;
+}
+
+/* error */
+.tot-form-item-dropdown.dark.ant-form-item-has-error
+  .ant-form-item-explain-error {
+  color: var(--primary-05);
+  font-size: var(--font-extra-small);
+  font-weight: var(--light);
+}
+.tot-form-item-dropdown.dark.ant-form-item-has-error
+  .ant-form-item-required
+  .ant-typography.prefix {
+  color: var(--primary-05);
+}
+.tot-form-item-dropdown.dark.ant-form-item-has-error
+  .tot-dropdown.ant-select-in-form-item
+  .ant-select-arrow
+  path {
+  stroke: var(--primary-05);
+}
+.tot-form-item-dropdown.dark
+  .tot-dropdown
+  .ant-select-status-error.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer)
+  .ant-select-selector {
+  border: 0.063rem solid var(--primary-05);
+}
+
+/* hover */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select.ant-select-in-form-item
+  .ant-select-selector:hover {
+  border: 0.063rem solid var(--white-10);
+}
+
+/* focus */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select.ant-select-in-form-item.ant-select-open
+  .ant-select-selector {
+  border: 0.063rem solid var(--secondary-07);
+  box-shadow: none;
+}
+
+/* placeholder */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select-in-form-item
+  .ant-select-selection-placeholder {
+  color: var(--white-10);
+  font-size: var(--font-small);
+  font-style: normal;
+  font-weight: var(--light);
+  line-height: normal;
+  align-self: center;
+}
+
+/* disabled */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select-single.ant-select-show-arrow.ant-select-disabled
+  .ant-select-selector {
+  border: 0.063rem solid var(--black-10);
+}
+
+/* placeholder focused */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select-in-form-item.ant-select-open
+  .ant-select-selection-placeholder {
+  color: var(--secondary-07);
+}
+
+/* prefix color */
+.tot-form-item-dropdown.dark .ant-form-item-label .ant-typography.prefix {
+  color: var(--white-10);
+  font-size: var(--font-small);
+}
+
+/* prefix focused */
+.tot-form-item-dropdown.clicked.dark .ant-typography.focused {
+  color: var(--secondary-07);
+  font-size: 0.75rem;
+}
+
+/* prefix visible */
+.tot-form-item-dropdown.clicked.dark .ant-form-item-label .visible {
+  color: var(--white-01);
+  font-size: 0.75rem;
+}
+
+/* prefix clicked */
+.tot-form-item-dropdown.clicked.dark .ant-form-item-label {
+  transform: translateY(-100%) translateY(-0.938rem);
+  font-size: 0.75rem;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  background-color: var(--black-02);
+  z-index: 1;
+  padding: 0rem 0.313rem;
+}
+
+/* read only */
+.tot-form-item-dropdown.clicked.dark .ant-typography.tot-read-only {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+/* dropdown arrow */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select-in-form-item
+  .ant-select-arrow
+  path {
+  stroke: var(--white-10);
+}
+
+/* arrow focused */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select-in-form-item.ant-select-open
+  .ant-select-arrow
+  path {
+  stroke: var(--secondary-07);
+}
+
+/* selected */
+.tot-form-item-dropdown.dark
+  .tot-dropdown
+  .ant-select-selection-overflow-item
+  .ant-select-selection-item {
+  display: flex;
+  min-width: 1rem;
+  max-width: 6.0625rem;
+  height: 1.75rem;
+  padding: 0.625rem 0.6875rem;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 0.3125rem;
+  background: var(--secondary-07);
+  border-color: var(--black-02);
+  margin-right: 0.125rem;
+}
+
+/* counter */
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select-multiple.ant-select-allow-clear
+  .ant-select-selector
+  .ant-select-selection-overflow
+  .ant-select-selection-overflow-item.ant-select-selection-overflow-item-rest
+  .ant-select-selection-item {
+  background: var(--black-04);
+  justify-content: center;
+  width: 1.5875rem;
+  height: 1.6875rem;
+  right: -1rem;
+  padding: 0;
+  border-color: var(--black-02);
+}
+
+.tot-form-item-dropdown.dark
+  .tot-dropdown.ant-select-single
+  .ant-select-selection-item {
+  color: var(--white-10);
+}
+
+/* allow clear */
+.tot-form-item-dropdown.dark .ant-select-clear {
+  background: none;
+}
+.tot-form-item-dropdown.dark .ant-select-clear path {
+  fill: var(--white-10);
+}
+
+.tot-popup-dropdown.dark {
+  background-color: var(--black-02);
+}
+
+.tot-popup-dropdown.dark .ant-select-item-option {
+  background-color: var(--black-02);
+  color: var(--white-10);
+}
+
+.tot-popup-dropdown.dark .ant-select-item-option:hover {
+  background-color: var(--black-04);
+}
+
+/* NUMBER */
+/* prefix color & size */
+.tot-input-field-number.dark .ant-form-item-label .ant-typography {
+  color: var(--white-10);
+  font-size: var(--font-small);
+}
+
+/* prefix focused */
+.tot-input-field-number.dark .ant-form-item-label .focused {
+  color: var(--secondary-07);
+  font-size: var(--font-extra-small);
+}
+
+/* prefix visible */
+.tot-input-field-number.dark .ant-form-item-label .visible {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+/* read only */
+.tot-input-field-number.dark .ant-typography.tot-read-only {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+.tot-input-field-number.dark
+  .tot-input-element-number:hover.tot-read-only {
+  border: 0.063rem solid var(--black-09);
+}
+
+.tot-input-field-number.dark
+  .tot-input-element-number.focused.tot-read-only {
+  border: 0.063rem solid var(--black-09);
+}
+
+/* prefix clicked */
+.tot-input-field-number.clicked.dark .ant-form-item-label {
+  transform: translateY(-100%) translateY(-0.738rem);
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  background-color: var(--black-02);
+  z-index: 1;
+  padding: 0rem 0.313rem;
+}
+
+/* error */
+.tot-input-field-number.dark.ant-form-item-has-error .ant-typography.prefix {
+  color: var(--primary-05);
+}
+
+/* sublabel / help */
+.tot-input-field-number.dark
+  .ant-form-item-explain.ant-form-item-explain-connected {
+  font-weight: var(--light);
+  font-size: var(--font-extra-small);
+  font-style: normal;
+  color: var(--white-10);
+  padding-bottom: 0.938rem;
+}
+
+.tot-input-field-number.dark .tot-input-element-number {
+  background: none;
+}
+
+.tot-input-field-number.dark
+  .tot-input-element-number
+  .ant-input-number-input {
+  color: var(--white-10);
+  background-color: none;
+}
+
+.tot-input-field-number.dark .tot-input-element-number:hover {
+  border: 0.063rem solid var(--white-10);
+}
+
+.tot-input-field-number.dark .tot-input-element-number.focused {
+  border: 0.063rem solid var(--secondary-07);
+}
+
+.tot-input-field-number.dark.with-number-button
+  .tot-input-element-number
+  .ant-input-number-handler-wrap
+  .ant-input-number-handler-up-inner
+  path,
+.tot-input-field-number.dark.with-number-button
+  .tot-input-element-number
+  .ant-input-number-handler-wrap
+  .ant-input-number-handler-down-inner
+  path {
+  color: var(--white-10);
+}
+
+.tot-input-field-number.dark.with-number-button
+  .tot-input-element-number
+  .ant-input-number-handler-wrap
+  .ant-input-number-handler-up,
+.tot-input-field-number.dark.with-number-button
+  .tot-input-element-number
+  .ant-input-number-handler-wrap
+  .ant-input-number-handler-down {
+  background-color: var(--black-02);
+}
+
+.tot-input-field-number.dark.with-number-button
+  .tot-input-element-number
+  .ant-input-number-handler-wrap
+  .ant-input-number-handler-up {
+  border-top-right-radius: 0.375rem;
+}
+
+.tot-input-field-number.dark.with-number-button
+  .tot-input-element-number
+  .ant-input-number-handler-wrap
+  .ant-input-number-handler-down {
+  border-bottom-right-radius: 0.375rem;
+}
+
+/* Time Picker */
+
+.tot-input-timepicker.dark.ant-picker {
+  border: 0.0625rem solid var(--black-09);
+  background: none;
+}
+
+.tot-input-timepicker.dark.ant-picker:hover {
+  border: 0.0625rem solid var(--white-10);
+}
+
+.tot-input-timepicker.dark.ant-picker.ant-picker-focused {
+  border: 0.0625rem solid var(--secondary-07);
+  outline: none;
+  box-shadow: none;
+}
+
+.tot-inputTime-form-item.dark .ant-form-item-label {
+  background: var(--black-02);
+}
+
+.tot-inputTime-form-item.dark .ant-form-item-label label {
+  color: var(--white-10);
+}
+
+.tot-inputTime-form-item.focused.dark .ant-form-item-label label {
+  color: var(--secondary-07);
+}
+
+.tot-input-timepicker.dark.ant-picker .ant-picker-suffix svg path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-input-timepicker.dark.ant-picker.ant-picker-focused
+  .ant-picker-suffix
+  svg
+  path {
+  fill: var(--secondary-07);
+  stroke: none;
+}
+
+.tot-input-timepicker.dark.ant-picker .ant-picker-input .ant-picker-clear {
+  background: none;
+}
+
+.tot-input-timepicker.dark.ant-picker
+  .ant-picker-input
+  .ant-picker-clear
+  svg {
+  background: var(--black-02);
+}
+
+.tot-input-timepicker.dark.ant-picker
+  .ant-picker-input
+  .ant-picker-clear
+  svg
+  path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-input-timepicker.dark.ant-picker .ant-picker-input input {
+  color: var(--white-10);
+}
+
+.tot-input-timepicker.dark.tot-readonly-time {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* for time picker calendar */
+
+.tot-timeRPicker-calendar.dark .ant-picker-ranges {
+  background: var(--black-02);
+}
+
+/* Time Range Picker */
+
+.tot-input-timeRangepicker.dark.ant-picker {
+  border: 0.0625rem solid var(--black-09);
+  background: none;
+}
+
+.tot-input-timeRangepicker.dark.ant-picker:hover {
+  border: 0.0625rem solid var(--white-10);
+}
+
+.tot-input-timeRangepicker.dark.ant-picker.ant-picker-focused {
+  border: 0.0625rem solid var(--secondary-07);
+  outline: none;
+  box-shadow: none;
+}
+
+.tot-inputTime-form-item.dark .ant-form-item-label {
+  background: var(--black-02);
+}
+
+.tot-inputTime-form-item.dark .ant-form-item-label label {
+  color: var(--white-10);
+}
+
+.tot-inputTime-form-item.focused.dark .ant-form-item-label label {
+  color: var(--secondary-07);
+}
+
+.tot-input-timeRangepicker.dark.ant-picker .ant-picker-suffix svg path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-input-timeRangepicker.dark.ant-picker.ant-picker-focused
+  .ant-picker-suffix
+  svg
+  path {
+  fill: var(--secondary-07);
+  stroke: none;
+}
+
+.tot-input-timeRangepicker.dark.ant-picker .ant-picker-clear {
+  background: none;
+}
+
+.tot-input-timeRangepicker.dark.ant-picker .ant-picker-clear svg {
+  background: var(--black-02);
+}
+
+.tot-input-timeRangepicker.dark.ant-picker .ant-picker-clear svg path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-input-timeRangepicker.dark.ant-picker .ant-picker-input input {
+  color: var(--white-10);
+}
+
+.tot-input-timeRangepicker.dark.ant-picker
+  .ant-picker-range-separator
+  .ant-picker-separator
+  svg
+  path {
+  fill: var(--white-10);
+}
+
+.tot-input-timeRangepicker.dark.tot-readonly-date {
+  pointer-events: none;
+  opacity: 1;
+}
+
+.tot-input-timeRangepicker.dark.tot-readonly-time {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* for time range picker calendar */
+
+.tot-timeRangePicker-calendar.dark .ant-picker-panel-container {
+  border-radius: 0.625rem;
+  background: none;
+}
+
+.tot-timeRangePicker-calendar.dark .ant-picker-ranges {
+  background: var(--black-04);
+}
+
+.tot-timeRangePicker-calendar.dark
+  .ant-picker-panel-container
+  .ant-picker-panel {
+  border-width: 0 0 0 0;
+}
+
+.tot-timeRangePicker-calendar.dark .ant-picker-time-panel {
+  background: var(--black-04);
+}
+
+.tot-timeRangePicker-calendar.dark
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
+  .ant-picker-time-panel-cell-inner {
+  background: var(--secondary-05);
+}
+
+.tot-timeRangePicker-calendar.dark
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell
+  .ant-picker-time-panel-cell-inner {
+  color: var(--white-10);
+}
+
+.tot-timeRangePicker-calendar.dark
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell
+  .ant-picker-time-panel-cell-inner:hover {
+  background: var(--secondary-06);
+}
+
+.tot-timeRangePicker-calendar.dark .ant-btn-primary {
+  background: var(--secondary-05);
+  color: var(--white-10);
+}
+.tot-timeRangePicker-calendar.dark .ant-picker-range-arrow::before {
+  background: var(--black-04);
+}
+
+.tot-timeRangePicker-calendar.dark .ant-picker-footer {
+  border-top: none;
+}
+
+/* For Date Picker */
+
+.tot-input-datepicker.dark.ant-picker {
+  border: 0.05rem solid var(--black-09);
+  background: none;
+}
+
+.tot-input-datepicker.dark.ant-picker:hover {
+  border: 0.05rem solid var(--white-10);
+}
+
+.tot-input-datepicker.dark.ant-picker.ant-picker-focused {
+  border: 0.05rem solid var(--secondary-07);
+}
+
+.tot-input-datepicker.dark.ant-picker.ant-picker-focused:hover {
+  border: 0.05rem solid var(--secondary-07);
+}
+
+.tot-input-datepicker.dark.ant-picker + .tot-date-inputLabel {
+  background: var(--black-02);
+  color: var(--white-10);
+}
+
+.tot-input-datepicker.dark.ant-picker.ant-picker-focused
+  + .tot-date-inputLabel {
+  color: var(--secondary-07);
+}
+
+.tot-input-datepicker.dark.ant-picker
+  .ant-picker-input
+  .ant-picker-suffix
+  svg
+  path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-input-datepicker.dark.ant-picker.ant-picker-focused
+  .ant-picker-input
+  .ant-picker-suffix
+  svg
+  path {
+  fill: var(--secondary-07);
+  stroke: none;
+}
+
+.tot-input-datepicker.dark.ant-picker .ant-picker-input .ant-picker-clear {
+  background: none;
+}
+
+.tot-input-datepicker.dark.ant-picker
+  .ant-picker-input
+  .ant-picker-clear
+  svg {
+  background: var(--black-02);
+}
+
+.tot-input-datepicker.dark.ant-picker
+  .ant-picker-input
+  .ant-picker-clear
+  svg
+  path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-input-datepicker.dark.ant-picker .ant-picker-input input {
+  color: var(--white-10);
+}
+
+.tot-input-datepicker.dark.tot-readonly-date {
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* for date picker calendar */
+
+.tot-datePicker-calendar.dark .ant-picker-panel-container {
+  border-radius: 1rem;
+  background: none;
+}
+
+.tot-datePicker-calendar.dark .ant-picker-header {
+  background: var(--black-04);
+  border-bottom: 0.0625rem solid var(--black-05);
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-header
+  .ant-picker-header-prev-btn
+  .ant-picker-prev-icon::before {
+  color: var(--white-10);
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-header
+  .ant-picker-header-super-prev-btn
+  .ant-picker-super-prev-icon::before {
+  color: var(--white-10);
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-header
+  .ant-picker-header-super-prev-btn
+  .ant-picker-super-prev-icon::after {
+  color: var(--white-10);
+}
+
+.tot-datePicker-calendar.dark .ant-picker-header .ant-picker-header-view {
+  color: var(--white-10);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-header-next-btn
+  .ant-picker-next-icon::before {
+  color: var(--white-10);
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-header
+  .ant-picker-header-super-next-btn
+  .ant-picker-super-next-icon::before {
+  color: var(--white-10);
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-header
+  .ant-picker-header-super-next-btn
+  .ant-picker-super-next-icon::after {
+  color: var(--white-10);
+}
+
+.tot-datePicker-calendar.dark .ant-picker-body {
+  background: var(--black-04);
+  border-bottom: 0.0625rem solid var(--black-05);
+}
+
+.tot-datePicker-calendar.dark .ant-picker-body .ant-picker-content th {
+  color: var(--white-10);
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-body
+  .ant-picker-content
+  .ant-picker-cell.ant-picker-cell-in-view {
+  color: var(--white-10);
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-body
+  .ant-picker-content
+  .ant-picker-cell {
+  color: var(--black-08);
+  font-weight: 500;
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-cell:hover:not(.ant-picker-cell-in-view)
+  .ant-picker-cell-inner,
+.tot-datePicker-calendar.dark
+  .ant-picker-cell:hover:not(.ant-picker-cell-selected):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):not(.ant-picker-cell-range-hover-start):not(.ant-picker-cell-range-hover-end)
+  .ant-picker-cell-inner {
+  background: var(--secondary-05);
+  border: 0.03125rem solid #0a5ad833;
+}
+
+.tot-datePicker-calendar.dark
+  .ant-picker-cell-in-view.ant-picker-cell-selected
+  .ant-picker-cell-inner {
+  background: var(--secondary-05);
+}
+
+.tot-datePicker-calendar.dark .ant-picker-footer {
+  background: var(--black-04);
+  border-top: none;
+}
+
+.tot-datePicker-calendar.dark .ant-picker-panel {
+  border: none;
+}
+
+.tot-datePicker-calendar.dark .ant-picker-today-btn {
+  color: var(--secondary-09);
+}
+
+/* For Date Range Picker */
+
+.tot-input-dateRangePicker.dark.ant-picker {
+  border: 0.0625rem solid var(--black-09);
+  background: none;
+}
+.tot-input-dateRangePicker.dark.ant-picker:hover {
+  border: 0.05rem solid var(--white-10);
+}
+
+.tot-input-dateRangePicker.dark.ant-picker.ant-picker-focused {
+  border: 0.05rem solid var(--secondary-07);
+}
+
+.tot-input-dateRangePicker.dark.ant-picker.ant-picker-focused:hover {
+  border: 0.05rem solid var(--secondary-07);
+}
+
+.tot-input-form-item.dark .ant-form-item-label {
+  background: var(--black-02);
+}
+
+.tot-input-form-item.dark .ant-form-item-label label {
+  color: var(--white-10);
+}
+
+.tot-input-form-item.dark .ant-form-item-label label::after {
+  content: none;
+}
+
+.tot-input-form-item.focused.dark .ant-form-item-label label {
+  color: var(--secondary-07);
+}
+
+.tot-input-dateRangePicker.dark.ant-picker.ant-picker-range
+  .ant-picker-suffix
+  svg
+  path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-input-dateRangePicker.dark.ant-picker.ant-picker-range.ant-picker-focused
+  .ant-picker-suffix
+  svg
+  path {
+  fill: var(--secondary-07);
+  stroke: none;
+}
+
+.tot-input-dateRangePicker.dark.ant-picker.ant-picker-range
+  .ant-picker-clear {
+  background: none;
+}
+
+.tot-input-dateRangePicker.dark.ant-picker.ant-picker-range
+  .ant-picker-clear
+  svg {
+  background: var(--black-02);
+}
+
+.tot-input-dateRangePicker.dark.ant-picker.ant-picker-range
+  .ant-picker-clear
+  svg
+  path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-input-dateRangePicker.dark.ant-picker
+  .ant-picker-range-separator
+  .ant-picker-separator
+  svg
+  path {
+  fill: var(--white-10);
+}
+
+.tot-input-dateRangePicker.dark.ant-picker .ant-picker-input input {
+  color: var(--white-10);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 0.4rem;
+}
+
+.tot-input-dateRangePicker.dark.tot-readonly-date {
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* FOr date picker range calendar  */
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-panel-container {
+  border-radius: 1rem;
+  background: none;
+}
+
+.tot-dateRangePicker-calendar.dark .ant-picker-range-arrow::before {
+  background: var(--black-04);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-header {
+  background: var(--black-04);
+  border-bottom: 0.0625rem solid var(--black-05);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-header
+  .ant-picker-header-prev-btn
+  .ant-picker-prev-icon::before {
+  color: var(--white-10);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-header
+  .ant-picker-header-super-prev-btn
+  .ant-picker-super-prev-icon::before {
+  color: var(--white-10);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-header
+  .ant-picker-header-super-prev-btn
+  .ant-picker-super-prev-icon::after {
+  color: var(--white-10);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-header
+  .ant-picker-header-view {
+  color: var(--white-10);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-header
+  .ant-picker-header-next-btn
+  .ant-picker-next-icon::before {
+  color: var(--white-10);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-header
+  .ant-picker-header-super-next-btn
+  .ant-picker-super-next-icon::before {
+  color: var(--white-10);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-header
+  .ant-picker-header-super-next-btn
+  .ant-picker-super-next-icon::after {
+  color: var(--white-10);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-body {
+  background: var(--black-04);
+  border-bottom: 0.0625rem solid var(--black-05);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-body
+  .ant-picker-content
+  th {
+  color: var(--white-10);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-body
+  .ant-picker-content
+  .ant-picker-cell.ant-picker-cell-in-view {
+  color: var(--white-10);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-body
+  .ant-picker-content
+  .ant-picker-cell {
+  color: var(--black-08);
+  font-weight: 500;
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-cell:hover:not(.ant-picker-cell-in-view)
+  .ant-picker-cell-inner,
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-cell:hover:not(.ant-picker-cell-selected):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):not(.ant-picker-cell-range-hover-start):not(.ant-picker-cell-range-hover-end)
+  .ant-picker-cell-inner {
+  background: var(--secondary-05);
+  border: 0.03125rem solid #0a5ad833;
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-cell-in-view.ant-picker-cell-selected
+  .ant-picker-cell-inner,
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-cell-in-view.ant-picker-cell-range-start
+  .ant-picker-cell-inner,
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-cell-in-view.ant-picker-cell-range-end
+  .ant-picker-cell-inner {
+  background: var(--secondary-05);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
+  background: var(--black-08);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
+  background: var(--black-08);
+}
+
+.tot-dateRangePicker-calendar.dark.ant-picker-dropdown-range
+  .ant-picker-panel {
+  border: none;
+}
+
+/* SELECT LIST */
+/* default */
+.tot-input-field-list.dark
+  .tot-input-element-list.ant-select-show-arrow
+  .ant-select-selector {
+  background: none;
+  border: 0.063rem solid var(--black-09);
+}
+
+/* hover */
+.tot-input-field-list.dark
+  .tot-input-element-list.ant-select-show-arrow
+  .ant-select-selector:hover {
+  border: 0.063rem solid var(--white-10);
+}
+
+/* focus */
+.tot-input-field-list.dark
+  .tot-input-element-list.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  box-shadow: none;
+  border: 0.063rem solid var(--secondary-07);
+}
+
+/* placeholder */
+.tot-input-field-list.dark
+  .tot-input-element-list
+  .ant-select-selection-placeholder {
+  color: var(--white-10);
+  font-size: var(--font-small);
+  font-style: normal;
+  font-weight: var(--light);
+  line-height: normal;
+  align-self: center;
+}
+
+/* placeholder focused */
+.tot-input-field-list.dark
+  .tot-input-element-list.ant-select-in-form-item.ant-select-open
+  .ant-select-selection-placeholder {
+  color: var(--secondary-07);
+}
+
+/* removed default error asterisk */
+.tot-input-field-list.dark
+  .ant-form-item-label
+  .ant-form-item-required.ant-form-item-no-colon::before {
+  display: none;
+}
+
+/* dark mode prefix */
+.tot-input-field-list.dark .ant-typography.prefix {
+  color: var(--white-10);
+}
+
+/* dark mode suffix color */
+.tot-input-field-list.dark
+  .tot-input-element-list
+  .ant-select-arrow
+  path {
+  fill: var(--white-10);
+}
+
+/* suffix when focused */
+.tot-input-field-list.dark
+  .tot-input-element-list.focused
+  .ant-select-arrow
+  path {
+  fill: var(--secondary-07);
+}
+
+/* prefix focused */
+.tot-input-field-list.clicked.dark .ant-typography.focused {
+  color: var(--secondary-07);
+  font-size: var(--font-extra-small);
+}
+
+/* prefix visible */
+.tot-input-field-list.clicked.dark .ant-form-item-label .visible {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+/* prefix clicked */
+.tot-input-field-list.clicked.dark .ant-form-item-label {
+  transform: translateY(-100%) translateY(-0.838rem);
+  font-size: 0.75rem;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  background-color: var(--black-02);
+  z-index: 1;
+  padding: 0rem 0.313rem;
+}
+
+/* error prefix */
+.tot-input-field-list.dark.ant-form-item-has-error .ant-typography.prefix {
+  color: var(--primary-05);
+}
+
+/* error suffix */
+.tot-input-field-list.dark.ant-form-item-has-error .ant-select-arrow path {
+  fill: var(--primary-05);
+}
+
+/* selected */
+.tot-input-field-list.dark
+  .tot-input-element-list.ant-select-multiple
+  .ant-select-selection-item {
+  background: var(--secondary-07);
+  border-radius: 0.3125rem;
+  width: 6.0625rem;
+  min-width: 1rem;
+  max-width: 6.0625rem;
+  align-items: center;
+  padding: 0.625rem 0.6875rem;
+  height: 1.65rem;
+  border-color: var(--black-02);
+}
+
+/* single selected */
+.tot-input-field-list.dark
+  .tot-input-element-list.ant-select-single
+  .ant-select-selection-item {
+  color: var(--white-10);
+}
+
+/* select list counter */
+.tot-input-field-list.dark
+  .tot-input-element-list.ant-select-multiple
+  .ant-select-selection-overflow-item-rest
+  .ant-select-selection-item {
+  position: absolute;
+  background: var(--black-04);
+  justify-content: center;
+  width: 1.5875rem;
+  height: 1.6875rem;
+  bottom: 0rem;
+  right: 0.225rem;
+  padding: 0;
+  border-color: var(--black-02);
+}
+
+/* dark mode prefix focus */
+.tot-input-field-list.dark:focus-within .ant-typography.prefix,
+.tot-input-field-list.clicked.dark:focus-within .ant-typography.prefix {
+  color: var(--secondary-07);
+}
+
+/* dark mode suffix focus */
+.tot-input-field-list.dark:focus-within .ant-select-arrow path {
+  fill: var(--secondary-07);
+}
+
+/* For switch */
+
+.tot-switch-label.dark {
+  color: var(--white-10);
+}
+
+.tot-readonly-switch.dark {
+  color: var(--white-10);
+}
+
+/* For Color Picker */
+
+.tot-color-picker-label.dark {
+  color: var(--white-10);
+}
+
+.tot-readonly-color-picker.dark {
+  color: var(--white-10);
+}
+
+/* For radio */
+
+.tot-radio-label.dark {
+  color: var(--white-10);
+}
+
+.tot-readonly-radio.dark {
+  color: var(--white-10);
+}
+
+/* For input group */
+.tot-input-search-group.dark .ant-form-item-label .ant-typography {
+  color: var(--white-10);
+  font-size: var(--font-small);
+}
+
+/* prefix focused */
+.tot-input-search-group.dark .ant-form-item-label .focused {
+  color: var(--secondary-07);
+  font-size: var(--font-extra-small);
+}
+
+/* prefix visible */
+.tot-input-search-group.dark .ant-form-item-label .visible {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+/* read only */
+.tot-input-search-group.dark .ant-typography.tot-read-only {
+  color: var(--white-01);
+  font-size: var(--font-extra-small);
+}
+
+.tot-input-search-group.dark
+  .tot-input-element-search-group:hover.tot-read-only,
+.tot-input-search-group.dark
+  .tot-input-element-search-group.ant-input-affix-wrapper:hover.tot-read-only {
+  border: 0.063rem solid var(--black-09);
+}
+
+.tot-input-search-group.dark .tot-input-element.focused.tot-read-only,
+.tot-input-search-group.dark
+  .tot-input-element-search-group.ant-input-affix-wrapper.focused.tot-read-only {
+  border: 0.063rem solid var(--black-09);
+}
+
+.tot-input-search-group.dark
+  .tot-input-element-search-group.tot-read-only
+  .ant-input-suffix
+  path {
+  fill: var(--white-10);
+}
+
+.tot-input-search-group.dark
+  .tot-input-element-search-group.focused.tot-read-only
+  .ant-input-prefix
+  path {
+  fill: var(--white-10);
+}
+
+/* prefix clicked */
+.tot-input-search-group.clicked.dark .ant-form-item-label {
+  transform: translateY(-100%) translateY(-0.738rem);
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  background-color: var(--black-02);
+  z-index: 1;
+  padding: 0rem 0.313rem;
+}
+
+/* error */
+.tot-input-search-group.dark .ant-form-item-explain-error {
+  color: var(--primary-05);
+  font-size: var(--font-extra-small);
+  font-weight: var(--light);
+}
+
+/* removed default error asterisk */
+.tot-input-search-group.dark
+  .ant-form-item-label
+  .ant-form-item-required.ant-form-item-no-colon::before {
+  display: none;
+}
+
+/* sublabel / help */
+.tot-input-search-group.dark
+  .ant-form-item-explain.ant-form-item-explain-connected {
+  font-weight: var(--light);
+  font-size: var(--font-extra-small);
+  font-style: normal;
+  color: var(--white-10);
+  padding-bottom: 0.938rem;
+}
+
+.tot-input-search-group.clicked.dark.ant-form-item-has-error
+  .ant-input-affix-wrapper-status-error {
+  box-shadow: none;
+}
+
+/* typography error */
+.tot-input-search-group.dark.ant-form-item-has-error
+  .ant-form-item-label
+  .ant-typography {
+  color: var(--primary-05);
+}
+
+/* suffix error */
+.tot-input-search-group.dark.ant-form-item-has-error
+  .tot-input-element-search-group
+  .ant-input-suffix
+  path {
+  fill: var(--primary-05);
+}
+
+.tot-input-search-group.dark .tot-input-element-search-group {
+  background: none;
+  color: var(--white-10);
+  border: 0.063rem solid var(--black-09);
+}
+
+/* text color & size */
+.tot-input-search-group.dark .tot-input-element-search-group .ant-input {
+  background: none;
+  color: var(--white-10);
+}
+
+/* hover */
+.tot-input-search-group.dark .tot-input-element-search-group:hover,
+.tot-input-search-group.dark
+  .tot-input-element-search-group.ant-input-affix-wrapper:hover {
+  border: 0.063rem solid var(--white-10);
+}
+
+/* focus */
+.tot-input-search-group.dark .tot-input-element-search-group.focused,
+.tot-input-search-group.dark
+  .tot-input-element-search-group.ant-input-affix-wrapper.focused {
+  border: 0.063rem solid var(--secondary-07);
+  box-shadow: none;
+  z-index: 0;
+}
+
+/* disabled */
+.tot-input-search-group.dark
+  .tot-input-element-search-group:hover.ant-input-affix-wrapper-disabled {
+  border: 0.063rem solid var(--black-10);
+}
+
+/* input placeholder */
+.tot-input-search-group.dark
+  .tot-input-element-search-group
+  .ant-input::placeholder,
+.tot-input-search-group.dark
+  .tot-input-element-search-group.ant-input::placeholder {
+  color: var(--white-10);
+  font-weight: var(--light);
+  font-size: var(--font-small);
+}
+
+/* error */
+.tot-input-search-group.dark
+  .tot-input-element-search-group.ant-input-affix-wrapper-status-error {
+  background: none;
+  border: 0.063rem solid var(--primary-05);
+}
+
+/* error hover */
+.tot-input-search-group.dark
+  .tot-input-element-search-group:hover.ant-input-affix-wrapper-status-error {
+  border: 0.063rem solid var(--primary-05);
+}
+
+/* error focused */
+.tot-input-search-group.dark
+  .tot-input-element-search-group.focused.ant-input-affix-wrapper-status-error {
+  border: 0.063rem solid var(--primary-05);
+}
+
+.tot-input-search-group.dark
+  .tot-input-element-search-group
+  .ant-input-suffix {
+  background-color: var(--black-05);
+}
+
+.tot-dropdown.dark.ant-select-show-search.ant-select-in-form-item
+  .ant-select-selection-search-input {
+  margin-left: 0.3125rem;
+  margin-top: -1rem;
+  font-size: 1rem;
+  width: 20.5rem;
+  color: var(--white-01);
+}

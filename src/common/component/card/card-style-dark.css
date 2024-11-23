@@ -1,0 +1,5 @@
+.tot-card.dark {
+  border-radius: 0.625rem;
+  border: 1.2px solid var(--black-02);
+  background: var(--black-02);
+}

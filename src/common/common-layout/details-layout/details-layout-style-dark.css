@@ -1,0 +1,11 @@
+.details-layout-box.dark {
+  width: 0.25rem;
+  height: 1.5rem;
+  background-color: var(--secondary-08);
+  border-radius: 3.125rem;
+}
+
+.details-layout-header.dark {
+  background-color: var(--black-02);
+  border-bottom: dashed 0.063rem rgba(255, 255, 255, 0.2);
+}

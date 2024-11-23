@@ -1,0 +1,33 @@
+.refresh-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("/refresh.svg"); /* Adjust the path based on your file structure */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.add-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("/add.svg"); /* Adjust the path based on your file structure */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.save-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("/save.svg"); /* Adjust the path based on your file structure */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.close-icon {
+  display: inline-block; /* Or 'block' if needed */
+  width: 24px;
+  height: 24px;
+  background-image: url("/close.svg"); /* Ensure the path is correct */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

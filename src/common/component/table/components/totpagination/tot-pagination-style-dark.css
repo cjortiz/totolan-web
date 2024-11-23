@@ -1,0 +1,66 @@
+.tot-pagination.dark {
+  background: var(--black-01);
+}
+
+.tot-pagination.dark .ant-pagination-prev .ant-pagination-item-link {
+  border-right: solid 0.0625rem var(--gray-02);
+  background: none;
+  border-radius: 0;
+  color: var(--white-10);
+}
+
+.tot-pagination.dark .ant-pagination-next .ant-pagination-item-link {
+  border-left: solid 0.0625rem var(--gray-02);
+  background: none;
+  border-radius: 0;
+  color: var(--white-10);
+}
+
+.tot-pagination.dark .ant-pagination-item {
+  background: none;
+}
+
+.tot-pagination.dark
+  .ant-pagination-item:not(.ant-pagination-item-active)
+  a {
+  color: var(--white-10);
+}
+
+.tot-pagination.dark .ant-pagination-item-active {
+  background: var(--primary-02);
+}
+
+.tot-pagination.dark
+  .ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  background-color: var(--black-01);
+  border: 1px solid var(--white-10);
+  color: var(--white-10);
+}
+
+.tot-pagination.dark
+  .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border: 1px solid var(--white-10);
+}
+
+.tot-pagination.dark .ant-select-arrow {
+  color: var(--white-10);
+}
+
+.tot-pagination.dark .rc-virtual-list-holder-inner {
+  background: var(--primary-02);
+}
+
+.tot-pagination.dark .ant-select-item {
+  background: var(--black-01);
+  color: var(--white-10);
+}
+
+.tot-pagination.dark .ant-select-item:hover {
+  background: var(--black-03);
+}
+
+.tot-pagination.dark .ant-select-item.ant-select-item-option-selected {
+  background: var(--black-04);
+}

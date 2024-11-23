@@ -1,0 +1,79 @@
+/* For Pagination */
+
+.tot-pagination {
+  border-radius: 0.25rem;
+  background: var(--white-10);
+  box-shadow: 0rem 0.125rem 0.375rem 0rem rgba(13, 10, 44, 0.08);
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  width: 100%;
+}
+
+.tot-pagination .ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link {
+  border: none;
+}
+
+.tot-pagination .ant-pagination-prev .ant-pagination-item-link {
+  border-right: solid 0.0625rem var(--gray-10);
+  background: none;
+  border-radius: 0;
+}
+
+.tot-pagination .ant-pagination-prev .ant-pagination-item-link:hover {
+  color: var(--primary-02);
+}
+
+.tot-pagination .ant-pagination-next .ant-pagination-item-link {
+  border-left: solid 0.0625rem var(--gray-10);
+  background: none;
+  border-radius: 0;
+}
+
+.tot-pagination .ant-pagination-next .ant-pagination-item-link:hover {
+  color: var(--primary-02);
+}
+
+.tot-pagination .ant-pagination-item-active {
+  border-radius: 0.1875rem;
+  background: var(--primary-02);
+  color: var(--white-10);
+  border: none;
+}
+
+.tot-pagination .ant-pagination-item-active a {
+  color: var(--white-10);
+}
+
+.tot-pagination .ant-pagination-item {
+  border: none;
+  color: var(--gray-02);
+}
+
+.tot-pagination .ant-pagination-item:not(.ant-pagination-item-active) a {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--gray-02);
+}
+
+.tot-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover {
+  background-color: rgb(148, 7, 20, 0.5);
+  cursor: pointer;
+  color: var(--white-10);
+}
+.tot-pagination
+  .ant-pagination-item:not(.ant-pagination-item-active)
+  a:hover {
+  color: var(--white-10);
+}
+
+.tot-pagination .ant-select-single:not(.ant-select-customize-input) .ant-select-selector:hover {
+  border-color: var(--primary-02);
+}
+
+.tot-pagination .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-color: var(--primary-02);
+  box-shadow: none;
+  border-right-width: 0.0625rem;
+  opacity: 0.7;
+}

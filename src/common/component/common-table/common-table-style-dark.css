@@ -1,0 +1,81 @@
+.common-table.dark .ant-table-cell {
+  background-color: var(--black-02);
+}
+
+.common-table.dark .ant-table-thead th {
+  background-color: var(--secondary-04);
+}
+
+.common-table.dark .ant-table-column-sorters::after {
+  background-color: var(--secondary-04);
+}
+
+.common-table.dark .ant-table-thead .ant-table-cell {
+  background-color: var(--secondary-04);
+  color: var(--white-10);
+  border-bottom: none;
+}
+
+.common-table.dark .ant-table-tbody > tr > td {
+  border-bottom: 0.0625rem solid var(--gray-03);
+  transition: none;
+}
+
+.common-table.dark .ant-table-tbody td {
+  height: 3.75rem;
+  color: var(--white-10);
+}
+
+.common-table.dark .ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-tbody > tr > td.ant-table-cell-hover {
+  background-color: var(--black-05);
+}
+
+.common-table.dark .ant-table th:hover {
+  background-color: var(--secondary-04);
+}
+
+.common-table.dark .ant-table th:hover {
+  background-color: var(--secondary-04);
+}
+
+.common-table.dark .ant-table-cell.ant-table-cell-scrollbar {
+  height: 2.6rem;
+  border-left: none;
+}
+
+.common-table.dark.ant-table-wrapper
+  .ant-table
+  .ant-table-container
+  .ant-table-body::-webkit-scrollbar {
+  width: 0.375rem;
+  padding-top: 0.125rem;
+  background-color: var(--black-03);
+}
+
+.common-table.dark.ant-table-wrapper
+  .ant-table
+  .ant-table-container
+  .ant-table-body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0.375rem;
+}
+
+.common-table.dark.ant-table-wrapper
+  .ant-table
+  .ant-table-container
+  .ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.common-table.dark.ant-table-wrapper
+  .ant-table
+  .ant-table-container
+  .ant-table-body::-webkit-scrollbar-thumb:active {
+  background: #333;
+}
+
+/* Extra row custom css */
+.common-table.dark .ant-table-tbody .extraRow-dark td {
+  height: 3.75rem;
+  background-color: #4d4d4d;
+}

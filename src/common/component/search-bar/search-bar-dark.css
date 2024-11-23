@@ -1,0 +1,41 @@
+.tot-drawer.dark .ant-drawer-wrapper-body {
+  background-color: var(--black-02);
+}
+
+.tot-drawer.dark .ant-drawer-header-title .ant-drawer-title {
+  color: var(--white-10);
+}
+
+.tot-drawer.dark .ant-drawer-header {
+  border-bottom: 0.063rem solid var(--black-07);
+}
+
+.tot-drawer.dark .anticon.anticon-close path {
+  fill: var(--black-10);
+}
+
+.tot-drawer.dark .ant-divider-horizontal {
+  width: 105%;
+  border-color: var(--black-05);
+  opacity: 1;
+}
+
+.tot-drawer.dark .tot-drawer-buttons {
+  background-color: var(--black-02);
+}
+
+.tot-drawer.dark .tot-drawer-buttons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5%;
+  right: -1.5%;
+  height: 0.075rem;
+  background-color: var(--black-07);
+}
+
+.tot-drawer.dark.ant-drawer-open .ant-form-item-label label,
+.tot-drawer.dark.ant-drawer-open .ant-space-item .ant-typography span,
+.tot-drawer.dark.ant-drawer-open .ant-form-item label{
+  color: var(--white-10);
+}

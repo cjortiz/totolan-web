@@ -1,0 +1,259 @@
+.main-layout.dark .tot-button-primary {
+  border-radius: 0.375rem;
+  background: var(--primary-02);
+  box-shadow: var(--button-shadow);
+}
+
+.main-layout.dark .tot-button-primary:hover {
+  background: var(--primary-03);
+  box-shadow: var(--navbar-shadow);
+}
+
+.main-layout.dark .tot-button-primary:focus {
+  background: var(--primary-01);
+  box-shadow: var(--button-shadow);
+}
+
+.main-layout.dark .tot-button-primary:disabled {
+  color: var(--white-10);
+  background: rgba(148, 7, 20, 0.5);
+  box-shadow: var(--button-shadow);
+}
+
+.main-layout.dark .tot-button-primary path {
+  fill: var(--white-03);
+  stroke: var(--white-03);
+}
+
+.main-layout.dark .tot-button-primary.ant-btn:active path {
+  fill: var(--white-10);
+  stroke: var(--white-10);
+}
+
+.main-layout.dark .tot-button-primary.ant-btn:disabled path {
+  fill: var(--white-10);
+  stroke: var(--white-10);
+  background: none;
+  box-shadow: var(--button-shadow);
+}
+
+.main-layout.dark .tot-button-secondary {
+  border-radius: 0.375rem;
+  border: 1px solid var(--primary-05);
+  color: var(--primary-05);
+}
+
+.main-layout.dark .tot-button-secondary:hover {
+  border: 2px solid var(--primary-05);
+}
+
+.main-layout.dark .tot-button-secondary:hover span {
+  color: var(--primary-05);
+}
+
+.main-layout.dark .tot-button-secondary:active {
+  background: var(--primary-02);
+  box-shadow: var(--button-shadow);
+  border: 2px solid var(--primary-02);
+  color: var(--white-10);
+}
+
+.main-layout.dark .tot-button-secondary:active span {
+  color: var(--white-10);
+}
+
+.main-layout.dark .tot-icon-secondary path {
+  fill: var(--primary-05);
+}
+
+.main-layout.dark .tot-icon-secondary:active path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.main-layout.dark .tot-button-secondary.ant-btn:disabled {
+  border-radius: 0.375rem;
+  background: none;
+  box-shadow: var(--button-shadow);
+  color: var(--primary-03);
+  border: 0.0625rem solid var(--primary-03);
+  opacity: 0.5;
+}
+
+.main-layout.dark .tot-button-tertiary {
+  color: var(--primary-04);
+}
+
+.main-layout.dark .tot-button-tertiary path {
+  fill: var(--primary-04);
+  stroke: var(--primary-04);
+}
+
+.main-layout.dark .tot-button-tertiary:hover {
+  background: var(--primary-09);
+  box-shadow: var(--button-shadow);
+}
+
+.main-layout.dark .tot-button-tertiary:active {
+  color: var(--white-10);
+  background: var(--primary-02);
+  box-shadow: var(--button-shadow);
+}
+
+.main-layout.dark .tot-button-tertiary:active path {
+  fill: var(--white-10);
+  stroke: var(--white-10);
+}
+
+.main-layout.dark .tot-button-tertiary.ant-btn:disabled {
+  border-radius: 0.375rem;
+  background: none;
+  box-shadow: var(--button-shadow);
+  color: var(--primary-08);
+}
+
+.main-layout.dark .tot-button-tertiary.ant-btn:disabled path {
+  fill: var(--primary-08);
+  stroke: var(--primary-08);
+}
+
+/* dark */
+.tot-button-primary.dark {
+  border-radius: 0.375rem;
+  background: var(--primary-02);
+  box-shadow: var(--button-shadow);
+}
+
+.tot-button-primary.dark:hover {
+  background: var(--primary-03);
+  box-shadow: var(--navbar-shadow);
+}
+
+.tot-button-primary.dark:focus {
+  background: var(--primary-01);
+  box-shadow: var(--button-shadow);
+}
+
+.tot-button-primary.dark:disabled {
+  color: var(--white-10);
+  background: rgba(148, 7, 20, 0.5);
+  box-shadow: var(--button-shadow);
+}
+
+.tot-button-primary.dark path {
+  fill: var(--white-03);
+  stroke: var(--white-03);
+}
+
+.tot-button-primary.ant-btn.dark:active path {
+  fill: var(--white-10);
+  stroke: var(--white-10);
+}
+
+.tot-button-primary.ant-btn.dark:disabled path {
+  fill: var(--white-10);
+  stroke: var(--white-10);
+  background: none;
+  box-shadow: var(--button-shadow);
+}
+
+.tot-button-secondary.dark {
+  border-radius: 0.375rem;
+  border: 1px solid var(--primary-05);
+  color: var(--primary-05);
+}
+
+.tot-button-secondary.dark:hover {
+  border: 2px solid var(--primary-05);
+}
+
+.tot-button-secondary.dark:hover span {
+  color: var(--primary-05);
+}
+
+.tot-button-secondary.dark:active {
+  background: var(--primary-02);
+  box-shadow: var(--button-shadow);
+  border: 2px solid var(--primary-02);
+  color: var(--white-10);
+}
+
+.tot-button-secondary.dark:active span {
+  color: var(--white-10);
+}
+
+.tot-icon-secondary.dark path {
+  fill: var(--primary-05);
+}
+
+.tot-icon-secondary.dark:active path {
+  fill: var(--white-10);
+  stroke: none;
+}
+
+.tot-button-secondary.ant-btn.dark:disabled {
+  border-radius: 0.375rem;
+  background: none;
+  box-shadow: var(--button-shadow);
+  color: var(--primary-03);
+  border: 0.0625rem solid var(--primary-03);
+  opacity: 0.5;
+}
+
+.tot-button-tertiary.dark {
+  color: var(--primary-04);
+}
+
+.tot-button-tertiary.dark path {
+  fill: var(--primary-04);
+  stroke: var(--primary-04);
+}
+
+.tot-button-tertiary.dark:hover {
+  background: var(--primary-09);
+  box-shadow: var(--button-shadow);
+}
+
+.tot-button-tertiary.dark:active {
+  color: var(--white-10);
+  background: var(--primary-02);
+  box-shadow: var(--button-shadow);
+}
+
+.tot-button-tertiary.dark:active path {
+  fill: var(--white-10);
+  stroke: var(--white-10);
+}
+
+.tot-button-tertiary.ant-btn.dark:disabled {
+  border-radius: 0.375rem;
+  background: none;
+  box-shadow: var(--button-shadow);
+  color: var(--primary-08);
+}
+
+.tot-button-tertiary.ant-btn.dark:disabled path {
+  fill: var(--primary-08);
+  stroke: var(--primary-08);
+}
+
+/* secondary buttons with icon */
+
+.main-layout.dark .tot-icon-secondary.ant-btn-default {
+  background: var(--black-05);
+}
+
+.main-layout.dark .tot-icon-secondary.ant-btn-default:hover {
+  background-color: var(--black-07);
+  border: none;
+}
+
+.main-layout.dark .tot-icon-secondary.ant-btn-default:active {
+  background-color: var(--primary-02);
+  border: none;
+}
+
+.main-layout.dark .tot-icon-secondary.ant-btn-default path {
+  fill: var(--white-10);
+  stroke: none;
+}

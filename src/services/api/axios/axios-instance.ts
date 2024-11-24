@@ -2,10 +2,10 @@ import axios, { AxiosInstance } from "axios";
 import { encryptPayload } from "../../../utils/common-utils";
 
 export const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "http://localhost:54870/api/web-totolan",
+  baseURL: "http://52.76.47.112:54870/api/web-totolan",
   timeout: 30000,
   headers: {
-    "x-api-secret": "http://localhost:54870/api",
+    "x-api-secret": "http://52.76.47.112:54870/api",
     "X-Frame-Options": "DENY",
     "Content-Security-Policy": "frame-ancestors 'self'",
   },

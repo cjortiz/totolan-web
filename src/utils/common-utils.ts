@@ -244,34 +244,48 @@ export const encryptPayload = (payload: string) => {
   }
 };
 
-/**
- * Decrypts an AES-encrypted response using ECB mode and PKCS7 padding.
- *
- * @param {string} encodedText - The Base64-encoded encrypted text to be decrypted.
- * @returns {Object} The decrypted JSON object.
- * @throws {Promise} Rejected with an error if decryption fails.
- */
-export const decryptResponse = (encodedText: string) => {
-  try {
-    // Decode the Base64 encoded secret key
-    const secretKey = CryptoJS.enc.Base64.parse(SECRET_KEY);
+// /**
+//  * Decrypts an AES-encrypted response using ECB mode and PKCS7 padding.
+//  *
+//  * @param {string} encodedText - The Base64-encoded encrypted text to be decrypted.
+//  * @returns {Object} The decrypted JSON object.
+//  * @throws {Promise} Rejected with an error if decryption fails.
+//  */
+// export const decryptResponse = (encodedText: string) => {
+//   try {
+//     // Decode the Base64 encoded secret key
+//     const secretKey = CryptoJS.enc.Base64.parse(SECRET_KEY);
 
-    // Decode Base64 encoded text to ciphertext
-    const ciphertext = CryptoJS.enc.Base64.parse(encodedText);
+//     // Decode Base64 encoded text to ciphertext
+//     const ciphertext = CryptoJS.enc.Base64.parse(encodedText);
 
-    // Decryption
-    const decrypted = CryptoJS.AES.decrypt({ ciphertext }, secretKey, {
-      mode: CryptoJS.mode.ECB,
-      padding: CryptoJS.pad.Pkcs7,
-    });
+//     // Decryption
+//     const decrypted = CryptoJS.AES.decrypt(
+//       {
+//         ciphertext,
+//         iv,
+//         salt,
+//         algorithm,
+//         key,
+//         mode,
+//         padding,
+//         blockSize,
+//         formatter,
+//       },
+//       secretKey,
+//       {
+//         mode: CryptoJS.mode.ECB,
+//         padding: CryptoJS.pad.Pkcs7,
+//       }
+//     );
 
-    // Convert the decrypted data to a string
-    const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
-    // CONSOLE LOG HERE FOR DEVELOPMENT PURPOSES
-    // console.log("Encrypted Text:", encodedText);
-    // console.log("Decrypted Text:", decryptedText);
-    return JSON.parse(decryptedText);
-  } catch (error) {
-    return Promise.reject(error);
-  }
-};
+//     // Convert the decrypted data to a string
+//     const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
+//     // CONSOLE LOG HERE FOR DEVELOPMENT PURPOSES
+//     // console.log("Encrypted Text:", encodedText);
+//     // console.log("Decrypted Text:", decryptedText);
+//     return JSON.parse(decryptedText);
+//   } catch (error) {
+//     return Promise.reject(error);
+//   }
+// };

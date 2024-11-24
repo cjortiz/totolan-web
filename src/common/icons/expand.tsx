@@ -1,5 +1,4 @@
 import { ExpandOutlined } from "@ant-design/icons";
-import { translate } from "i18n";
 
 import { IconProps } from "./icon.props";
 import { defaultIconColor } from "./icon.theme";
@@ -13,7 +12,7 @@ export const ExpandIcon = (props: IconProps) => {
   return (
     <span className="expand-icon">
       <ExpandOutlined style={style ? style : defaultIconColor} />
-      <span className="expand-text">{translate("dashboard.expand")}</span>
+      <span className="expand-text">Expand</span>
     </span>
   );
 };

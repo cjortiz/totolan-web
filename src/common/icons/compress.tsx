@@ -1,8 +1,8 @@
 import { CompressOutlined } from "@ant-design/icons";
-import { translate } from "i18n";
 
 import { IconProps } from "./icon.props";
 import { defaultIconColor } from "./icon.theme";
+import { translate } from "../i18n";
 
 /**
  * @deprecated This component is not included in the design system and will be deleted in the future.
@@ -13,7 +13,7 @@ export const CompressIcon = (props: IconProps) => {
   return (
     <span className="expand-icon">
       <CompressOutlined style={style ? style : defaultIconColor} />
-      <span className="expand-text">{translate("dashboard.compress")}</span>
+      <span className="expand-text">Compress</span>
     </span>
   );
 };

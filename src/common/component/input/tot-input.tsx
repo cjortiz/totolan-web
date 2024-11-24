@@ -269,7 +269,7 @@ const TotInput = (props: Props.SiriusInputProps) => {
             label && (
               <Typography.Text
                 className={`prefix ${
-                  isFocused ? "focused" : "" || inputProp.value ? "visible" : ""
+                  isFocused ? "focused" : (inputProp.value ? "visible" : "")
                 } ${inputProp.readOnly ? "tot-read-only" : ""}`}
               >
                 {label && `${label}${isRequired ? " *" : ""}`}
@@ -310,16 +310,16 @@ const TotInput = (props: Props.SiriusInputProps) => {
           colon={colon ? colon : false}
           className={`tot-input-field-list${
             isFocused
-              ? " focused"
-              : "" || inputProp.readOnly || inputProp.value
-              ? " clicked"
-              : ""
+            ? " focused"
+            : (inputProp.readOnly || inputProp.value)
+            ? " clicked"
+            : ""
           }${isDark ? " dark" : ""}`}
           label={
             label && (
               <Typography.Text
                 className={`prefix ${
-                  isFocused ? "focused" : "" || inputProp.value ? "visible" : ""
+                  isFocused ? "focused" : (inputProp.value ? "visible" : "")
                 } ${inputProp.readOnly ? "tot-read-only" : ""}`}
               >
                 {label && `${label}${isRequired ? " *" : ""}`}
@@ -552,7 +552,7 @@ const TotInput = (props: Props.SiriusInputProps) => {
             label && (
               <Typography.Text
                 className={`prefix ${
-                  isFocused ? "focused" : "" || inputProp.value ? "visible" : ""
+                  isFocused ? "focused" : (inputProp.value ? "visible" : "")
                 } ${inputProp.readOnly ? "tot-read-only" : ""}`}
               >
                 {label && `${label}${isRequired ? " *" : ""}`}
@@ -598,7 +598,7 @@ const TotInput = (props: Props.SiriusInputProps) => {
             label && (
               <Typography.Text
                 className={`prefix ${
-                  isFocused ? "focused" : "" || inputProp.value ? "visible" : ""
+                  isFocused ? "focused" : (inputProp.value ? "visible" : "")
                 } ${inputProp.readOnly ? "tot-read-only" : ""}`}
               >
                 {label && `${label}${isRequired ? " *" : ""}`}
@@ -643,7 +643,7 @@ const TotInput = (props: Props.SiriusInputProps) => {
             label && (
               <Typography.Text
                 className={`prefix ${
-                  isFocused ? "focused" : "" || inputProp.value ? "visible" : ""
+                  isFocused ? "focused" : (inputProp.value ? "visible" : "")
                 } ${inputProp.readOnly ? "tot-read-only" : ""}`}
               >
                 {label && `${label}${isRequired ? " *" : ""}`}
@@ -687,7 +687,7 @@ const TotInput = (props: Props.SiriusInputProps) => {
             label && (
               <Typography.Text
                 className={`prefix ${
-                  isFocused ? "focused" : "" || inputProp.value ? "visible" : ""
+                  isFocused ? "focused" : (inputProp.value ? "visible" : "")
                 } ${inputProp.readOnly ? "tot-read-only" : ""}`}
               >
                 {label && `${label}${isRequired ? " *" : ""}`}
@@ -774,7 +774,7 @@ const TotInput = (props: Props.SiriusInputProps) => {
             label && (
               <Typography.Text
                 className={`prefix ${
-                  isFocused ? "focused" : "" || inputProp.value ? "visible" : ""
+                  isFocused ? "focused" : (inputProp.value ? "visible" : "")
                 } ${inputProp.readOnly ? "tot-read-only" : ""} `}
               >
                 {label && `${label}${isRequired ? " *" : ""}`}

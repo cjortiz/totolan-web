@@ -6,7 +6,7 @@ import { LoginInputValue, LoginInterface } from "./login.props";
 export const login = async (
   values: LoginInputValue,
   showMessage: ShowMessageInterface,
-  setIsLoading: (value: boolean) => void,
+  setIsLoading: (value: boolean) => void
 ) => {
   setIsLoading(true);
   return await LoginServiceApi.login(values)
@@ -16,8 +16,13 @@ export const login = async (
       }
     })
     .catch((error: ApiResultModel<LoginInterface>) => {
-      //   siriusErrorHandler(error, showMessage);
-      //   getLockDetails(values, showMessage, setErrorCount);
+      let errorMessage = "";
+      if (error.errorCodes) {
+        errorMessage = error.errorCodes;
+      } else {
+        errorMessage = `Connection error`;
+      }
+      showMessage("error", errorMessage);
 
       setIsLoading(false);
       return error?.resultData;

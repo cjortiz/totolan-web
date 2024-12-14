@@ -31,19 +31,18 @@ export const Login = observer(() => {
   const [loginDetails, setLoginDetails] = useState<LoginDetailsInterface>();
 
   const onFinishHandler = (data: LoginInputValue) => {
-    showMessage("error", "hello");
-    // login(data, showMessage, setLoading).then((data: LoginInterface) => {
-    //   if (data) {
-    //     console.log(data);
-    //     authStore.setAuthCredentials(data);
+    login(data, showMessage, setLoading).then((data: LoginInterface) => {
+      if (data) {
+        console.log(data);
+        authStore.setAuthCredentials(data);
 
-    //     if (!data.token) {
-    //       showMessage("error", translate("errorMessage.incorrectCredentials"));
-    //     } else {
-    //       authStore.setLoggedIn(data.token ? true : false);
-    //     }
-    //   }
-    // });
+        if (!data.token) {
+          showMessage("error", translate("errorMessage.incorrectCredentials"));
+        } else {
+          authStore.setLoggedIn(data.token ? true : false);
+        }
+      }
+    });
   };
 
   const setDataHandler = (newProperties: object) => {

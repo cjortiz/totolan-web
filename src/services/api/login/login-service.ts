@@ -9,7 +9,7 @@ const login = async (values: LoginInputValue) => {
       return result.data;
     })
     .catch((error: TotError<TotResponse<LoginInterface>>) => {
-      throw error.response?.data;
+      throw error;
     });
 };
 

@@ -85,14 +85,12 @@ SiriusButton.Save = (props: SiriusButtonProps) => {
         <TotIcons.Save
           width={iconWidth ? iconWidth : DEFAULT_ICON_SIZE}
           height={iconHeight ? iconWidth : DEFAULT_ICON_SIZE}
-          color={color.white}
+          color={color.secondary01}
         />
       }
       padding="1.25rem"
       {...rest}
-    >
-      Save
-    </SiriusButton.IconPrimary>
+    ></SiriusButton.IconPrimary>
   );
 };
 
@@ -105,7 +103,7 @@ SiriusButton.Add = (props: SiriusButtonProps) => {
           <TotIcons.Add
             width={iconWidth ? iconWidth : undefined}
             height={iconHeight ? iconWidth : undefined}
-            color={color.white}
+            color={color.secondary01}
           />
         }
         {...rest}
@@ -138,12 +136,12 @@ SiriusButton.Refresh = (props: SiriusButtonProps) => {
   const { icon, iconHeight, iconWidth, ...rest } = props;
   return (
     <div>
-      <SiriusButton.IconSecondary
+      <SiriusButton.IconPrimary
         icon={
           <TotIcons.Refresh
             width={iconWidth ? iconWidth : DEFAULT_ICON_SIZE}
             height={iconHeight ? iconWidth : DEFAULT_ICON_SIZE}
-            color={color.secondary02}
+            color={color.secondary01}
           />
         }
         {...rest}
@@ -210,12 +208,11 @@ SiriusButton.Close = (props: SiriusButtonProps) => {
     <div>
       <SiriusButton.IconSecondary
         icon={
-          <CloseOutlined />
-          // <TotIcons.Close
-          //   width={iconWidth ? iconWidth : 24}
-          //   height={iconHeight ? iconWidth : 24}
-          //   color={color.secondary02}
-          // />
+          <TotIcons.Close
+            width={iconWidth ? iconWidth : 24}
+            height={iconHeight ? iconWidth : 24}
+            color={color.secondary01}
+          />
         }
         {...rest}
       />

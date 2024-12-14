@@ -10,6 +10,7 @@ import {
   getDefaultMessageStoreModel,
   MessageStoreModel,
 } from "../message-store/message-store";
+import { AuthStoreModel, getDefaultAuthStoreModel } from "../auth-store";
 
 /**
  * A RootStore model.
@@ -17,7 +18,8 @@ import {
 // prettier-ignore
 export const RootStoreModel = types.model("RootStore").props({
   appStateStore: types.optional(AppStateStoreModel, getDefaultAppStateStoreModel()),
-  messageStore: types.optional(MessageStoreModel,getDefaultMessageStoreModel)
+  messageStore: types.optional(MessageStoreModel,getDefaultMessageStoreModel),
+  authStore: types.optional(AuthStoreModel,getDefaultAuthStoreModel)
 })
 
 /**

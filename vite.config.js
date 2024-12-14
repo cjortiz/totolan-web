@@ -5,5 +5,11 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import legacy from "@vitejs/plugin-legacy";
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [legacy(), react(), tsconfigPaths(), svgr()],
+  plugins: [legacy(), react(), tsconfigPaths(), svgr()],
+  resolve: {
+    extensions: [".tsx", ".ts", ".jsx", ".js"], // Ensure .tsx has precedence
+  },
+  build: {
+    outDir: "build",
+  },
 });

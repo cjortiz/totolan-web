@@ -5,7 +5,7 @@ import SiriusButton from "../tot-button";
 import { SiriusHeaderButtonsProps } from "./tot-header-button-props";
 import { MainActionType, ViewMode } from "../../../constants";
 
-export const SiriusHeaderButtons = (props: SiriusHeaderButtonsProps) => {
+export const TotHeaderButtons = (props: SiriusHeaderButtonsProps) => {
   const {
     viewMode,
     onClickButtonType,
@@ -258,4 +258,4 @@ export const SiriusHeaderButtons = (props: SiriusHeaderButtonsProps) => {
   return headerButtonHandler();
 };
 
-export default SiriusHeaderButtons;
+export default TotHeaderButtons;

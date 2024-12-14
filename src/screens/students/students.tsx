@@ -9,9 +9,10 @@ import {
   ViewMode,
 } from "../../common";
 import { StudentData, StudentList, StudentTableListInterface } from "./views";
-import { SiriusHeaderButtons } from "../../common/component/button";
+import { TotHeaderButtons } from "../../common/component/button";
 import { STUDENT_DEF_FILTER } from "./functions/student-functions";
 import { DEF_STUDENT_DATA } from "./constants";
+import { observer } from "mobx-react-lite";
 
 export interface StudentFilterData extends PaginationDto {
   searchString?: string;
@@ -20,7 +21,7 @@ export interface StudentFilterData extends PaginationDto {
   sex?: string;
 }
 
-export const Students = () => {
+export const Students = observer(() => {
   const [viewMode, setViewMode] = useState<ViewMode>(ViewMode.LIST);
   const [filterData, setFilterData] = useState<StudentFilterData>(
     STUDENT_DEF_FILTER()
@@ -36,7 +37,7 @@ export const Students = () => {
 
   return (
     <MainLayout
-      buttons={SiriusHeaderButtons({
+      buttons={TotHeaderButtons({
         viewMode: viewMode,
         onClickButtonType: setActionType,
       })}
@@ -56,4 +57,4 @@ export const Students = () => {
       />
     </MainLayout>
   );
-};
+});

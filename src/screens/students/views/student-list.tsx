@@ -26,6 +26,7 @@ import {
   commonPaginationChangeHandler,
   getS,
 } from "../../../utils/common-utils";
+import { observer } from "mobx-react-lite";
 
 interface StudentsListProps {
   viewMode: ViewMode;
@@ -59,7 +60,6 @@ export interface StudentData {
   middleName: string;
   address: string;
   gender: string;
-  age: number;
   birthDate: Moment;
   contactNum: string;
   mothersName: string;
@@ -70,7 +70,7 @@ export interface StudentData {
   isUploaded: boolean;
 }
 
-export const StudentList = (props: StudentsListProps) => {
+export const StudentList = observer((props: StudentsListProps) => {
   const {
     viewMode,
     actionType,
@@ -85,7 +85,7 @@ export const StudentList = (props: StudentsListProps) => {
     setStudentList,
   } = props;
 
-  const { messageStore } = useStores();
+  const { messageStore, appStateStore } = useStores();
   const { showMessage } = messageStore;
   const [selectedId, setSelectedId] = useState<number>();
 
@@ -109,7 +109,13 @@ export const StudentList = (props: StudentsListProps) => {
   }, [actionType]);
 
   const fetchListHandler = () => {
-    fetchDataList(filterData, showMessage, () => {}, setStudentList);
+    fetchDataList(
+      filterData,
+      showMessage,
+      () => {},
+      setStudentList,
+      appStateStore.setLoading
+    );
   };
 
   const detailTitleHandler = (): string => {
@@ -136,7 +142,7 @@ export const StudentList = (props: StudentsListProps) => {
         showSorterTooltip: false,
         render: (_, record) => (
           <SiriusTypography.BodyExtraSmall
-            color={color.secondary07}
+            color={color.secondary01}
             onClick={() => {
               setSelectedId(record?.id);
             }}
@@ -250,4 +256,4 @@ export const StudentList = (props: StudentsListProps) => {
       </DetailsLayout>
     </>
   );
-};
+});

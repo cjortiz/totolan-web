@@ -1,0 +1,110 @@
+/* Container for the input */
+.input-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* Transparent input with bottom border */
+.login-input {
+  width: 100%;
+  padding: 10px 10px;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6) !important;
+  background: transparent !important;
+  font-size: 16px;
+  color: #fff !important;
+  outline: none !important;
+  box-shadow: none !important; /* Disable Ant Design's default box-shadow */
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Placeholder styles */
+.login-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Focus state */
+.login-input:focus {
+  border-bottom: 2px solid #7ab3e6 !important;
+  transform: scale(1.02);
+  box-shadow: none !important; /* Disable Ant Design's focus box-shadow */
+}
+
+/* Input hover effect */
+.login-input:hover {
+  border-bottom: 2px solid #3867a8 !important;
+}
+
+/* Disable hover and focus styles from Ant Design wrapper classes */
+.login-input.ant-input:hover,
+.login-input.ant-input:focus,
+.login-input.ant-input-affix-wrapper:hover,
+.login-input.ant-input-affix-wrapper:focus {
+  border-bottom: 2px solid #7ab3e6 !important;
+  box-shadow: none !important;
+}
+
+
+/* Login Button Container */
+.login-button {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background: transparent;
+    /* border: 2px solid; */
+    /* border-image: linear-gradient(135deg, #143568, #3867a8, #7ab3e6) 1; */
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    /* opacity: 0.65; */
+  }
+  
+  /* Gradient overlay effect on hover */
+  .login-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(135deg, #143568, #3867a8, #7ab3e6);
+    z-index: 1;
+    transition: left 0.5s ease;
+  }
+  
+  /* Text inside the button */
+  .login-button span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Hover Effect */
+  .login-button:hover {
+    color: #fff;
+  }
+  
+  .login-button:hover::before {
+    left: 0;
+  }
+  
+  .login-button:focus {
+    outline: none;
+    border-color: #7ab3e6;
+  }
+  
+  /* Disabled state */
+  .login-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  

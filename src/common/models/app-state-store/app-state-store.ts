@@ -17,6 +17,7 @@ export const AppStateStoreModel = types
   }))
   .actions(self => ({
     setLoading: (loading: boolean) => {
+      console.log("here")
       self.loading = loading;
     },
     setOpenDrawer: (open: boolean) => {

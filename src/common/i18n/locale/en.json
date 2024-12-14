@@ -21,8 +21,17 @@
     "mothersName": "Mother's Name",
     "fathersName": "Father's Name",
     "idNumber":"ID #",
-    "studentName": "Student Name"
+    "studentName": "Student Name",
+    "grades": "Grades",
+    "gradesTitle": "Edit {{studentsName}}'s grades"
   }
+ },
+ "year":{
+  "title": "Grade Year / Subject List",
+  "newTitle":"Add new details",
+  "gradeLevel":"Grade Level",
+  "subject" : "Subject",
+  "instructor":"Instructor"
  },
  "common": {
   "gender":{
@@ -86,8 +95,23 @@
   },
   "errorMessage":{
     "invalidImageType": "The image must be a file of type: jpeg, jpg, png, gif, svg, webp",
-    "invalidImageSize": "Please select file that is not more than 2048KB"
-    
+    "invalidImageSize": "Please select file that is not more than 2048KB",
+    "expiredSession": "Your session has expired or somebody has logged in to your account. Please log in again",
+    "incorrectCredentials": "User ID or Password is incorrect"
+
+
+  },
+  "section":{
+    "title": "Section List",
+    "gradeYear" : "Grade Level",
+    "sectionName": "Section",
+    "addTitle":"New Section",
+    "teacher" : "Teacher"
+  },
+  "login":{
+    "userName": "Username",
+    "password":"Password"
+
   }
  
 }

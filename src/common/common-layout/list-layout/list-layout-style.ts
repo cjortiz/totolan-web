@@ -6,8 +6,7 @@ export const listLayoutViewMode: React.CSSProperties = {
 
 export const listLayoutDefaultMode: React.CSSProperties = {
   width: "100%",
-  minHeight : "100%",
-  height: "fit-content",
+  height: "100%",
   transitionDuration: "0.3s",
 };
 

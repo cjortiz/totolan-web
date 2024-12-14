@@ -87,6 +87,10 @@
   cursor: pointer;
 }
 
+.common-table.ant-table-cell:hover {
+  text-decoration: underline;
+}
+
 .common-table.ant-table-wrapper
   .ant-table
   .ant-table-container

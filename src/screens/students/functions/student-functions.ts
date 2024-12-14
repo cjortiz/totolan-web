@@ -1,5 +1,7 @@
+import moment, { Moment } from "moment";
 import { CURRENT_PAGE, PAGE_SIZE, PaginationDto } from "../../../common";
 import { StudentFilterData } from "../students";
+import { FormInstance } from "antd/lib";
 
 export const STUDENT_DEF_FILTER = (): StudentFilterData => {
   const data = defaultFilterValue({
@@ -9,6 +11,15 @@ export const STUDENT_DEF_FILTER = (): StudentFilterData => {
   });
   console.log(data);
   return data;
+};
+
+export const calculateAgeHandler = (data: Moment, form: FormInstance) => {
+  if (data["$d"]) {
+    const birthDate = moment(data["$d"]);
+    const today = moment();
+    const age = today.diff(birthDate, "years");
+    form.setFieldValue("age", age);
+  }
 };
 
 /**

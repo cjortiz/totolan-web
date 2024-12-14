@@ -1,22 +1,27 @@
-import { Layout, Menu, MenuProps, theme } from "antd";
-import "./App.css";
-import { AppRoutes } from "./routes";
-import {
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import { useEffect, useState } from "react";
-import { Header, Content, Footer } from "antd/es/layout/layout";
+import { Layout, Menu, MenuProps } from "antd";
 import Sider from "antd/es/layout/Sider";
-import { NavHeader } from "./common/navbar";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { PATHS } from "./config/paths";
-import { RootStore, RootStoreProvider, setupRootStore } from "./common";
-
-// const { Header, Content, Footer, Sider } = Layout;
+import {
+  RootStore,
+  setupRootStore,
+  RootStoreProvider,
+  useStores,
+} from "./common";
+import { AuthListener } from "./common/component/auth-listener/auth-listener";
+import { Spinner } from "./common/component/spinner/spinner";
+import { NavHeader } from "./common/navbar";
+import { PATHS } from "./config";
+import { AppRoutes } from "./routes";
+import { Login } from "./screens";
+import {
+  PieChartOutlined,
+  DesktopOutlined,
+  UserOutlined,
+  TeamOutlined,
+  FileOutlined,
+} from "@ant-design/icons";
+import { color } from "./theme";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -42,8 +47,8 @@ const items: MenuItem[] = [
     getItem("Grades", "4"),
   ]),
   getItem("Teacher Setup", "sub2", <TeamOutlined />, [
-    getItem("Edit Grades", "5"),
-    getItem("Section Assignment", "6"),
+    getItem("Grade Year", "5"),
+    getItem("Section Setup", "6"),
   ]),
   getItem("Files", "7", <FileOutlined />),
 ];
@@ -51,20 +56,52 @@ const items: MenuItem[] = [
 function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [rootStore, setRootStore] = useState<RootStore | undefined>(undefined);
-  // Kick off initial async loading actions, like loading fonts and RootStore
 
+  // Setup root store asynchronously
   useEffect(() => {
     (async () => {
-      setupRootStore().then(setRootStore);
+      const store = await setupRootStore();
+      setRootStore(store);
     })();
   }, []);
 
+  if (!rootStore) return null;
+
+  return (
+    <RootStoreProvider value={rootStore}>
+      <Layout style={{ height: "100vh", width: "100%" }}>
+        <Spinner />
+        <ProtectedApp collapsed={collapsed} setCollapsed={setCollapsed} />
+      </Layout>
+    </RootStoreProvider>
+  );
+}
+
+function ProtectedApp({
+  collapsed,
+  setCollapsed,
+}: {
+  collapsed: boolean;
+  setCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const { authStore } = useStores();
   const navigate = useNavigate();
 
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // Redirect to login if accessToken is null or empty
+  useEffect(() => {
+    if (!authStore?.accessToken) {
+      setIsLoggedIn(false);
+      navigate(PATHS.LOGIN.path); // Redirect to login if no token
+    } else {
+      setIsLoggedIn(true); // AccessToken is available
+    }
+  }, [authStore?.accessToken, navigate]);
+
+  // if (!isLoggedIn) {
+  //   return <Login />;
+  // }
   const handleMenuClick = (key: string) => {
     switch (key) {
       case "1":
@@ -79,66 +116,79 @@ function App() {
       case "4":
         navigate(PATHS.Students.path);
         break;
+      case "5":
+        navigate(PATHS.GradeYearSetup.path);
+        break;
+      case "6":
+        navigate(PATHS.SectionSetup.path);
+
+        break;
       default:
         break;
     }
   };
 
-  if (!rootStore) return <div>Loading...</div>;
-
   return (
-    <RootStoreProvider value={rootStore}>
-      <Layout style={{ minHeight: "100vh", width: "100%" }}>
-        {/* Include the new header component here */}
-        <Layout>
-          <Sider
-            onMouseEnter={() => setCollapsed(false)}
-            onMouseLeave={() => setCollapsed(true)}
-            collapsed={collapsed}
+    <>
+      <AuthListener />
+      <NavHeader collapsed={collapsed} setCollapsed={setCollapsed} />
+      <Layout>
+        <Sider
+          onMouseEnter={() => setCollapsed(false)}
+          onMouseLeave={() => setCollapsed(true)}
+          collapsed={collapsed}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
+            }}
           >
+            <div>
+              <Menu
+                theme="dark"
+                defaultSelectedKeys={["1"]}
+                mode="inline"
+                items={items}
+                onClick={({ key }) => handleMenuClick(key)}
+              />
+            </div>
             <div
-              style={{ padding: "16px", textAlign: "center", color: "#fff" }}
+              style={{
+                padding: "16px",
+                textAlign: "center",
+                color: "#fff",
+              }}
             >
               <img
                 src="https://via.placeholder.com/40" // Replace with your profile picture URL
                 alt="Profile"
-                style={{ borderRadius: "50%", width: "40px", height: "40px" }}
+                style={{
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                }}
               />
               <div style={{ marginTop: "8px", fontSize: "16px" }}>
                 User Name
               </div>
-            </div>{" "}
-            <Menu
-              theme="dark"
-              defaultSelectedKeys={["1"]}
-              mode="inline"
-              items={items}
-              onClick={({ key }) => handleMenuClick(key)}
-            />
-          </Sider>
-          <Layout>
-            <NavHeader />
-
-            <Content style={{ margin: "0 16px" }}>
-              <div
-                style={{
-                  height: "76vh",
-                  background: colorBgContainer,
-                  borderRadius: borderRadiusLG,
-                }}
-              >
-                <AppRoutes />
-              </div>
-            </Content>
-            <Footer style={{ textAlign: "center" }}>
-              Totalan Learning Management ©{new Date().getFullYear()} Created by
-              BISU
-            </Footer>
-          </Layout>
+            </div>
+          </div>
+        </Sider>
+        <Layout>
+          <div
+            style={{
+              height: "100%",
+              background: color.secondary01,
+            }}
+          >
+            <AppRoutes />
+          </div>
         </Layout>
       </Layout>
-    </RootStoreProvider>
+    </>
   );
 }
-
 export default App;

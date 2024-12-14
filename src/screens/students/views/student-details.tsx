@@ -1,4 +1,4 @@
-import { Form, Input, Space } from "antd";
+import { Button, Form, Input, Space } from "antd";
 import {
   DateFormat,
   FormItemFieldType,
@@ -6,20 +6,26 @@ import {
   TotFormItem,
   translate,
   TypeOf,
+  UploadImage,
   useStores,
   ViewMode,
 } from "../../../common";
 import "../grades.css";
 import { StudentData } from "./student-list";
-import TotInput from "../../../common/component/input/tot-input";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { DEF_STUDENT_DATA } from "../constants";
-import { UploadImage } from "../../../common/component/upload-image";
 import { getS } from "../../../utils/common-utils";
 import {
   addNewStudent,
   fetchStudentById,
 } from "../operations/student-operations";
+import { observer } from "mobx-react-lite";
+import { color } from "../../../theme";
+import { GradesModal } from "../modals";
+import TotInput from "../../../common/component/input/tot-input";
+import { Moment } from "moment";
+import moment from "moment";
+import { calculateAgeHandler } from "../functions/student-functions";
 
 interface StudentDetailsProps {
   pageView: ViewMode;
@@ -32,7 +38,7 @@ interface StudentDetailsProps {
   setActionType: (actionType: MainActionType) => void;
 }
 
-export const StudentDetails = (props: StudentDetailsProps) => {
+export const StudentDetails = observer((props: StudentDetailsProps) => {
   const {
     pageView,
     actionType,
@@ -46,8 +52,11 @@ export const StudentDetails = (props: StudentDetailsProps) => {
   } = props;
   const [form] = Form.useForm();
   const [detailsForm] = Form.useForm();
-  const { messageStore } = useStores();
+  const { messageStore, appStateStore } = useStores();
   const { showMessage } = messageStore;
+  const { setLoading } = appStateStore;
+
+  const [openGrades, setOpenGrades] = useState<boolean>(false);
 
   useEffect(() => {
     switch (actionType) {
@@ -75,6 +84,18 @@ export const StudentDetails = (props: StudentDetailsProps) => {
   }, [actionType]);
 
   useEffect(() => {
+    const data = studentData.birthDate["$d"] ?? studentData.birthDate["_d"];
+    if (data) {
+      const birthDate = moment(data);
+      const today = moment();
+      const age = today.diff(birthDate, "years");
+      if (age > 0) {
+        form.setFieldValue("age", age);
+      }
+    }
+  }, [studentData?.birthDate]);
+
+  useEffect(() => {
     if (
       (pageView === ViewMode.LIST || pageView === ViewMode.VIEW) &&
       selectedId
@@ -84,7 +105,8 @@ export const StudentDetails = (props: StudentDetailsProps) => {
         selectedId,
         showMessage,
         setPageView,
-        setStudentData
+        setStudentData,
+        setLoading
       );
     }
   }, [selectedId]);
@@ -107,20 +129,41 @@ export const StudentDetails = (props: StudentDetailsProps) => {
   }, [studentData]);
 
   const setStudentHandler = (newProperties: object) => {
+    console.log(newProperties);
     setStudentData({ ...studentData, ...newProperties });
   };
 
   const onFinishHandler = (data: StudentData) => {
-    addNewStudent(data, showMessage);
+    addNewStudent(
+      form,
+      data,
+      showMessage,
+      setPageView,
+      setStudentData,
+      setLoading
+    );
     form.resetFields();
   };
 
   const setCurrentDataByProperty = (data: any) => {};
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <Form layout="vertical" form={form} onFinish={onFinishHandler}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
+      <Form
+        layout="vertical"
+        form={form}
+        onFinish={onFinishHandler}
+        style={{
+          height: "52.5vh",
+        }}
+      >
         <TotFormItem
+          style={{ height: "75vh" }}
           readonly={pageView === ViewMode.VIEW ? true : false}
           items={[
             {
@@ -129,8 +172,7 @@ export const StudentDetails = (props: StudentDetailsProps) => {
               value: studentData?.firstName,
               label: translate("student.details.firstName"),
               inputType: FormItemFieldType.INPUT,
-              hidden: false,
-              width: "400px",
+              width: "25rem",
               onBlur: (val) =>
                 setStudentHandler({ firstName: val.target?.value }),
             },
@@ -140,8 +182,7 @@ export const StudentDetails = (props: StudentDetailsProps) => {
               value: studentData?.lastName,
               label: translate("student.details.lastName"),
               inputType: FormItemFieldType.INPUT,
-              hidden: false,
-              width: "400px",
+              width: "25rem",
               onBlur: (val) =>
                 setStudentHandler({ lastName: val.target?.value }),
             },
@@ -170,15 +211,11 @@ export const StudentDetails = (props: StudentDetailsProps) => {
                       <TotInput
                         name="age"
                         suffix="yrs"
-                        readOnly={pageView === ViewMode.VIEW}
-                        value={studentData?.age}
+                        readOnly
                         label={translate("student.details.age")}
                         size="large"
                         maxLength={2}
                         style={{ width: "100px" }}
-                        onBlur={(val) =>
-                          setStudentHandler({ age: val.target?.value })
-                        }
                       />
                     </Form.Item>
 
@@ -214,9 +251,9 @@ export const StudentDetails = (props: StudentDetailsProps) => {
                         allowClear={false}
                         value={studentData?.birthDate}
                         format={DateFormat.MMDDYYYY_SLASH}
-                        onChange={(val) =>
-                          setStudentHandler({ birthDate: val })
-                        }
+                        onChange={(val) => {
+                          setStudentHandler({ birthDate: val });
+                        }}
                       />
                     </Form.Item>
                   </Space>
@@ -230,7 +267,7 @@ export const StudentDetails = (props: StudentDetailsProps) => {
               label: translate("student.details.address"),
               inputType: FormItemFieldType.INPUT,
               hidden: false,
-              width: "400px",
+              width: "25rem",
               onBlur: (val) =>
                 setStudentHandler({ address: val.target?.value }),
             },
@@ -241,7 +278,7 @@ export const StudentDetails = (props: StudentDetailsProps) => {
               label: translate("student.details.idNumber"),
               inputType: FormItemFieldType.INPUT,
               hidden: false,
-              width: "220px",
+              width: "25rem",
               maxLength: 6,
               onBlur: (val) => {
                 setStudentHandler({ idNumber: val.target?.value });
@@ -249,26 +286,24 @@ export const StudentDetails = (props: StudentDetailsProps) => {
               },
             },
             {
-              key: "mothersName",
-              name: "mothersName",
-              value: studentData?.mothersName,
-              label: translate("student.details.mothersName"),
-              inputType: FormItemFieldType.INPUT,
-              hidden: false,
-              width: "400px",
-              onBlur: (val) =>
-                setStudentHandler({ mothersName: val.target?.value }),
-            },
-            {
               key: "fathersName",
               name: "fathersName",
               value: studentData?.fathersName,
               label: translate("student.details.fathersName"),
               inputType: FormItemFieldType.INPUT,
-              hidden: false,
-              width: "400px",
+              width: "25rem",
               onBlur: (val) =>
                 setStudentHandler({ fathersName: val.target?.value }),
+            },
+            {
+              key: "mothersName",
+              name: "mothersName",
+              value: studentData?.mothersName,
+              label: translate("student.details.mothersName"),
+              inputType: FormItemFieldType.INPUT,
+              width: "25rem",
+              onBlur: (val) =>
+                setStudentHandler({ mothersName: val.target?.value }),
             },
           ]}
         />
@@ -350,27 +385,20 @@ export const StudentDetails = (props: StudentDetailsProps) => {
               ]}
             />
           </Form>
-          {/* <div style={{ width: "100%", height: "100%" }}>
-            <div
-              style={{
-                display: "flex",
-                border: "1px solid black",
-                alignItems: "center",
-              }}
-            >
-              <TotInput
-                readOnly
-                label={translate("student.details.studentName")}
-                size="small"
-                width="70%"
-              />
-            </div>
-
-            <TotInput readOnly label="hello" width="50%" />
-            <TotInput readOnly label="hello" width="50%" />
-          </div> */}
+          <Button
+            color="primary"
+            style={{ color: "white", background: color.secondary01 }}
+            onClick={() => setOpenGrades(true)}
+          >
+            {translate("student.details.grades")}
+          </Button>
+          <GradesModal
+            open={openGrades}
+            setOpen={setOpenGrades}
+            studentName={detailsForm.getFieldValue("studentName")}
+          />
         </div>
       </div>
     </div>
   );
-};
+});

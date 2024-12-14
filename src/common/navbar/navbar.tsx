@@ -1,31 +1,20 @@
 import "./navbar.css";
 import TotolanIcon from "../../assets/images/totolan_icon.png";
-import { AutoComplete, Input, Tooltip, Typography } from "antd";
-import { SearchOutlined, CloseOutlined } from "@ant-design/icons";
-import { useEffect, useRef, useState } from "react";
+import { Button, Typography } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PATHS } from "../../config/paths";
+import { color } from "../../theme";
 
-export const NavHeader = () => {
-  const input = useRef<any>(null);
+interface NavHeaderProps {
+  collapsed: boolean;
+  setCollapsed: (arg: boolean) => void;
+}
+
+export const NavHeader = (props: NavHeaderProps) => {
+  const { collapsed, setCollapsed } = props;
   const navigate = useNavigate();
-
-  const [options, setOptions] = useState<any[]>([]);
-  const [searchValue, setsearchValue] = useState<string>("");
-
-  const [showSearch, setShowSearch] = useState<boolean>(false);
-  const [quickAccessToolTip, setQuickAccessToolTip] = useState<boolean>(false);
-
-  //   const navigate = useNavigate();
-
-  const toggleShowSearch = () => {
-    setShowSearch(!showSearch);
-    input.current.focus();
-  };
-
-  const handleClear = () => {
-    setsearchValue("");
-  };
 
   //   useEffect(() => {
   //     const option = [];
@@ -50,8 +39,24 @@ export const NavHeader = () => {
     <div className="header-container">
       <div
         style={{
-          width: "150px",
-          height: "150px",
+          width: "5%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "left",
+          alignItems: "center",
+        }}
+      >
+        <Button
+          type="text"
+          onClick={() => setCollapsed(!collapsed)}
+          style={{ width: "80%", height: "80%" }}
+          icon={<MenuOutlined color={color.gray07} />}
+        ></Button>
+      </div>
+      <div
+        style={{
+          width: "5rem",
+          height: "5rem",
           marginRight: "20px",
           display: "flex", // Optional: Aligns the content inside the div
           justifyContent: "center", // Optional: Centers the content horizontally
@@ -63,8 +68,8 @@ export const NavHeader = () => {
           src={TotolanIcon} // Replace with your profile picture URL
           alt="Icon"
           style={{
-            width: "100%", // Fit to parent width
-            height: "100%", // Fit to parent height
+            width: "5rem", // Fit to parent width
+            height: "5rem", // Fit to parent height
             borderRadius: "50%", // Maintain the border radius
             objectFit: "cover", // Cover the div while maintaining aspect ratio
           }}
@@ -73,7 +78,7 @@ export const NavHeader = () => {
       <div
         style={{
           width: "30%",
-          height: "150px",
+          height: "100%",
           display: "flex",
           flexDirection: "column",
           position: "relative",
@@ -88,31 +93,31 @@ export const NavHeader = () => {
           }}
         >
           <Typography.Text
-            style={{ fontSize: "30px", fontWeight: "bold", color: "#00008b" }}
+            style={{ fontSize: "1rem", fontWeight: "bold", color: "#00008b" }}
           >
             TOTOLAN ELEMENTARY SCHOOL
           </Typography.Text>
         </div>
-        <div style={{ width: "100%", height: "50%" }}>
-          <Typography.Text style={{ fontSize: "20px", fontWeight: 500 }}>
+        <div style={{ position: "relative", width: "100%", height: "50%" }}>
+          <Typography.Text style={{ fontSize: ".8rem", fontWeight: 500 }}>
             LEARNING MANAGEMENT SYSTEM
           </Typography.Text>
         </div>
       </div>
-      <div
+      {/* <div
         style={{
-          marginLeft: "29%",
-          width: "30%",
-          height: "150px",
+          height: "100%",
           display: "flex",
+          flex: 1,
           alignItems: "center",
           justifyContent: "end",
+          paddingRight: "1%",
         }}
       >
         <AutoComplete
           ref={input}
           autoFocus
-          style={{ height: "50px", width: "50%", borderRadius: 20 }}
+          style={{ height: "2.5rem", width: "50%", borderRadius: 20 }}
           options={options}
           filterOption={(inputValue, option) =>
             option?.value?.toUpperCase().indexOf(inputValue.toUpperCase()) !==
@@ -132,7 +137,7 @@ export const NavHeader = () => {
           }}
         >
           <Input
-            style={{ height: "50px", width: "100%", borderRadius: 20 }}
+            style={{ height: "2.5rem", width: "100%", borderRadius: 20 }}
             prefix={<SearchOutlined />}
             placeholder="Search"
           />
@@ -215,7 +220,7 @@ export const NavHeader = () => {
             </AutoComplete>
           </div>
         </Tooltip> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };

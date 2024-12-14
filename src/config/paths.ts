@@ -11,6 +11,10 @@ export const PATHS = {
     path: "/login",
     label: "Login",
   },
+  LOGOUT: {
+    path: "/logout",
+    label: "Logout",
+  },
   PROFILE: {
     path: "/profile",
     label: "Profile",
@@ -22,5 +26,13 @@ export const PATHS = {
   Students: {
     path: "/students",
     label: "Students",
+  },
+  GradeYearSetup: {
+    path: "/gradeYear",
+    label: "Grade Year Setup",
+  },
+  SectionSetup: {
+    path: "/section",
+    label: "Section Setup",
   },
 };

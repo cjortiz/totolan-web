@@ -284,6 +284,7 @@ export const encryptPayload = (payload: string) => {
 //     // CONSOLE LOG HERE FOR DEVELOPMENT PURPOSES
 //     // console.log("Encrypted Text:", encodedText);
 //     // console.log("Decrypted Text:", decryptedText);
+//     console.log(decryptedText);
 //     return JSON.parse(decryptedText);
 //   } catch (error) {
 //     return Promise.reject(error);

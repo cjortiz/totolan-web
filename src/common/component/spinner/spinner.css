@@ -1,0 +1,16 @@
+.loading-page {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed; /* Ensures it covers the entire viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 9999; /* Bring to front */
+    opacity: 1;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: progress;
+  }
+  

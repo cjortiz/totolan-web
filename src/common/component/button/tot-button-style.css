@@ -61,7 +61,7 @@
 /*hover: */
 .tot-button-primary.ant-btn:hover {
   border-radius: 0.375rem;
-  background: var(--primary-03);
+  background: var(--white-03);
   box-shadow: var(--button-shadow);
 }
 
@@ -105,7 +105,7 @@
 .tot-icon-primary.ant-btn-default {
   height: 2.5rem;
   border-radius: 0.375rem;
-  background: var(--primary-02);
+  background: var(--white-03);
   box-shadow: var(--button-shadow);
   display: flex;
   justify-content: center;
@@ -121,19 +121,19 @@
 }
 
 .tot-icon-primary.ant-btn-default:hover {
-  background-color: var(--primary-03);
+  background-color: yellow;
   border: none;
 }
 
 .tot-icon-primary.ant-btn-default:active {
-  background-color: var(--primary-01);
+  background-color: var(--secondary-01);
   border: none;
 }
 
 .tot-icon-secondary.ant-btn-default {
   height: 2.5rem;
   border-radius: 0.375rem;
-  background: var(--white-10);
+  background: var(--white-03);
   box-shadow: var(--button-shadow);
   display: flex;
   justify-content: center;

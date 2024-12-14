@@ -16,7 +16,7 @@ export const MainLayout = observer((props: MainLayoutProps) => {
       <div className="main-layout-header">
         <SiriusTypography.BodyLarge
           fontWeight="semibold"
-          color={appStateStore.isDarkMode ? color.white10 : color.primary02}
+          color={appStateStore.isDarkMode ? color.white10 : color.white}
         >
           {title}
         </SiriusTypography.BodyLarge>

@@ -29,7 +29,6 @@ const fetchStudentList = (
 const addNewStudent = (
   value: StudentData
 ): Promise<ApiResultModel<StudentData>> => {
-  console.log(value);
   return axiosInstance
     .post(`/students`, value)
     .then((response) => {

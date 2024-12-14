@@ -1,3 +1,4 @@
+import { SearchOutlined } from "@ant-design/icons";
 import { EMPTY_STRING, ViewMode } from "../../../constants";
 import { translate } from "../../../i18n";
 import { TotIcons } from "../../../icons/tot-icon";

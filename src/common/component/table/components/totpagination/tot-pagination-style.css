@@ -36,7 +36,7 @@
 
 .tot-pagination .ant-pagination-item-active {
   border-radius: 0.1875rem;
-  background: var(--primary-02);
+  background: var(--secondary-01);
   color: var(--white-10);
   border: none;
 }

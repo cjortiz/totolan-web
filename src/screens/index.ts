@@ -3,3 +3,6 @@ export * from "./login";
 export * from "./registration";
 export * from "./page-not-found";
 export * from "./students";
+export * from "./yearsetup";
+export * from "./section";
+export * from "./logout";

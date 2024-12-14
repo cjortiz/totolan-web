@@ -6,3 +6,4 @@ export * from "./students";
 export * from "./yearsetup";
 export * from "./section";
 export * from "./logout";
+export * from "./main"

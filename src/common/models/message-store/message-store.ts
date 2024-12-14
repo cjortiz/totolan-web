@@ -1,6 +1,7 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree";
 import { color } from "../../../theme";
 import { NoticeType } from "antd/es/message/interface";
+import { toJS } from "mobx";
 
 export const MessageStoreModel = types
   .model("Message")
@@ -14,6 +15,7 @@ export const MessageStoreModel = types
       self.type = type;
       self.content = message;
       self.open = true;
+      console.log(toJS(self))
     },
   }))
   .actions((self) => ({
@@ -51,7 +53,6 @@ export const MessageStoreModel = types
         },
         duration: 5,
         style: {
-          backgroundColor: color[type],
           color: color.white,
         },
       };

@@ -9,3 +9,4 @@ export * from "./search-bar";
 export * from "./input";
 export * from "./form-item";
 export * from "./upload-image";
+export * from "./message";

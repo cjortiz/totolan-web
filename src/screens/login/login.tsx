@@ -15,13 +15,14 @@ import "./login.css";
 import SiriusButton from "../../common/component/button/tot-button";
 import { login } from "./login-operations";
 import { LoginInputValue, LoginInterface } from "./login.props";
+import { observer } from "mobx-react-lite";
 
 interface LoginDetailsInterface {
   userName: string;
   password: string;
 }
 
-export const Login = () => {
+export const Login = observer(() => {
   const { authStore, messageStore, appStateStore } = useStores();
   const { showMessage } = messageStore;
   const { setLoading } = appStateStore;
@@ -29,23 +30,20 @@ export const Login = () => {
   const [form] = Form.useForm();
   const [loginDetails, setLoginDetails] = useState<LoginDetailsInterface>();
 
-  useEffect(() => {
-    console.log("login");
-  }, []);
-
   const onFinishHandler = (data: LoginInputValue) => {
-    login(data, showMessage, setLoading).then((data: LoginInterface) => {
-      if (data) {
-        console.log(data);
-        authStore.setAuthCredentials(data);
+    showMessage("error", "hello");
+    // login(data, showMessage, setLoading).then((data: LoginInterface) => {
+    //   if (data) {
+    //     console.log(data);
+    //     authStore.setAuthCredentials(data);
 
-        if (!data.token) {
-          showMessage("error", translate("errorMessage.incorrectCredentials"));
-        } else {
-          authStore.setLoggedIn(data.token ? true : false);
-        }
-      }
-    });
+    //     if (!data.token) {
+    //       showMessage("error", translate("errorMessage.incorrectCredentials"));
+    //     } else {
+    //       authStore.setLoggedIn(data.token ? true : false);
+    //     }
+    //   }
+    // });
   };
 
   const setDataHandler = (newProperties: object) => {
@@ -58,7 +56,7 @@ export const Login = () => {
         background:
           "linear-gradient(135deg,#143568 30%, #3867a8 60%, #7ab3e6 100%)",
         width: "100%",
-        height: "100%",
+        height: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -154,4 +152,4 @@ export const Login = () => {
       </div>
     </div>
   );
-};
+});

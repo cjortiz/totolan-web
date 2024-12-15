@@ -45,8 +45,9 @@ export const Main = observer(({ children }: any) => {
     getItem("Teacher Setup", "sub2", <TeamOutlined />, [
       getItem("Grade Year", "5"),
       getItem("Section Setup", "6"),
+      getItem("Teacher Setup", "7"),
     ]),
-    getItem("Files", "7", <FileOutlined />),
+    getItem("Files", "8", <FileOutlined />),
   ];
 
   const handleMenuClick = (key: string) => {
@@ -68,7 +69,9 @@ export const Main = observer(({ children }: any) => {
         break;
       case "6":
         navigate(PATHS.SectionSetup.path);
-
+        break;
+      case "7":
+        navigate(PATHS.TeacherSetup.path);
         break;
       default:
         break;

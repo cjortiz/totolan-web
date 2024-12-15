@@ -16,12 +16,13 @@ export const axiosInstance: AxiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   async (request) => {
     // REQUEST HEADER
-    const authStore = JSON.parse(localStorage.root).authStore;
-    const token = authStore.accessToken;
+    if (typeof window !== "undefined" && localStorage.root) {
+      const authStore = JSON.parse(localStorage.root).authStore;
+      const token = authStore.accessToken;
 
-    // REFRESH TOKEN
-    if (token && !request.url.includes("refresh-token")) {
-      request.headers["Authorization"] = `Bearer ${token}`;
+      if (token && !request.url.includes("refresh-token")) {
+        request.headers["Authorization"] = `Bearer ${token}`;
+      }
     }
 
     // VALIDATE FORM DATA/REQUEST PARAM REQUEST

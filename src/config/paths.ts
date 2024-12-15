@@ -3,7 +3,7 @@ export const RESOURCE_ENABLED = "ENABLED";
 export const PAYNAMICS_RESOURCE_ENABLED = "PAYNAMICS";
 
 export const PATHS = {
-  MAIN :{
+  MAIN: {
     path: "/",
     label: "Main",
   },
@@ -38,5 +38,9 @@ export const PATHS = {
   SectionSetup: {
     path: "/section",
     label: "Section Setup",
+  },
+  TeacherSetup: {
+    path: "/teachers",
+    label: "Teacher Setup",
   },
 };

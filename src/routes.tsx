@@ -39,9 +39,9 @@ const PrivateRoutes = (
   <Route
     path={PATHS.MAIN.path}
     element={
-      <PrivateRoute>
-        <Screens.Main />
-      </PrivateRoute>
+      // <PrivateRoute>
+      <Screens.Main />
+      // </PrivateRoute>
     }
   >
     {/* Dashboard and Profile Routes */}
@@ -57,5 +57,6 @@ const PrivateRoutes = (
       element={<Screens.GradeYearSetup />}
     />
     <Route path={PATHS.SectionSetup.path} element={<Screens.SectionSetup />} />
+    <Route path={PATHS.TeacherSetup.path} element={<Screens.TeacherSetup />} />
   </Route>
 );

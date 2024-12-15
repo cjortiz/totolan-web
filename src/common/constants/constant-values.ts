@@ -1,3 +1,4 @@
+import { translate } from "../i18n";
 import { PaginatedResponseDto } from "./common-props";
 
 export const PAGE_SIZE = 100;
@@ -40,6 +41,17 @@ export const DEFAULT_DATA_LIST: PaginatedResponseDto<any> = {
   pageNumber: 1,
   summaryTotal: 0.0,
 };
+
+export const GENDER_OPTIONS = [
+  {
+    label: translate("common.gender.male"),
+    value: "0",
+  },
+  {
+    label: translate("common.gender.female"),
+    value: "1",
+  },
+];
 
 export const GRADE_YEAR_OPTIONS = [
   {

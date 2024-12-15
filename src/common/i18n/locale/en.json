@@ -1,50 +1,50 @@
 {
- "student":{
-  "studentListTitle":"Students List",
-  "studentsNewTitle":"Add New Student Details",
-  "tableTitles":{
-    "idNumber":"ID #" ,
-    "name": "Student Name",
-    "age": "Age",
-    "gradeYear":"Grade Year",
-    "sex":"Gender"
+  "student": {
+    "studentListTitle": "Students List",
+    "studentsNewTitle": "Add New Student Details",
+    "tableTitles": {
+      "idNumber": "ID #",
+      "name": "Student Name",
+      "age": "Age",
+      "gradeYear": "Grade Year",
+      "sex": "Gender"
+    },
+    "details": {
+      "firstName": "First Name",
+      "middleName": "Middle Name",
+      "lastName": "Last Name",
+      "age": "Age",
+      "gender": "Gender",
+      "address": "Address",
+      "birthDate": "Birth Date",
+      "contactNum": "Contact Number",
+      "mothersName": "Mother's Name",
+      "fathersName": "Father's Name",
+      "idNumber": "ID #",
+      "studentName": "Student Name",
+      "grades": "Grades",
+      "gradesTitle": "Edit {{studentsName}}'s grades"
+    }
   },
-  "details":{
-    "firstName" : "First Name",
-    "middleName":"Middle Name",
-    "lastName": "Last Name",
-    "age": "Age",
-    "gender": "Gender",
-    "address":"Address",
-    "birthDate":"Birth Date",
-    "contactNum": "Contact Number",
-    "mothersName": "Mother's Name",
-    "fathersName": "Father's Name",
-    "idNumber":"ID #",
-    "studentName": "Student Name",
-    "grades": "Grades",
-    "gradesTitle": "Edit {{studentsName}}'s grades"
-  }
- },
- "year":{
-  "title": "Grade Year / Subject List",
-  "newTitle":"Add new details",
-  "gradeLevel":"Grade Level",
-  "subject" : "Subject",
-  "instructor":"Instructor"
- },
- "common": {
-  "gender":{
-    "male": "Male",
-    "female":"Female"
+  "year": {
+    "title": "Grade Year / Subject List",
+    "newTitle": "Add new details",
+    "gradeLevel": "Grade Level",
+    "subject": "Subject",
+    "instructor": "Instructor"
   },
-  "upload":"Upload Image",
-  "selectOption": "Select Option",
-  "RESET":"Reset",
-  "list": "List",
-  "time": "Time",
-  "SEARCH":"Search",
-    "moreFilter":"More Filter",
+  "common": {
+    "gender": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "upload": "Upload Image",
+    "selectOption": "Select Option",
+    "RESET": "Reset",
+    "list": "List",
+    "time": "Time",
+    "SEARCH": "Search",
+    "moreFilter": "More Filter",
     "companyId": "Company ID",
     "record": "record",
     "submit": "SUBMIT",
@@ -87,31 +87,32 @@
     "date": "Date",
     "noDataAvailable": "No Data Available",
     "siriusModalTitle": "Sirius Modal Title",
-    "selections":{
+    "selections": {
       "onehunder": "100",
       "fifty": "50",
       "twenty": "20"
     }
   },
-  "errorMessage":{
+  "errorMessage": {
     "invalidImageType": "The image must be a file of type: jpeg, jpg, png, gif, svg, webp",
     "invalidImageSize": "Please select file that is not more than 2048KB",
     "expiredSession": "Your session has expired or somebody has logged in to your account. Please log in again",
     "incorrectCredentials": "User ID or Password is incorrect"
-
-
   },
-  "section":{
+  "section": {
     "title": "Section List",
-    "gradeYear" : "Grade Level",
+    "gradeYear": "Grade Level",
     "sectionName": "Section",
-    "addTitle":"New Section",
-    "teacher" : "Teacher"
+    "addTitle": "New Section",
+    "teacher": "Teacher"
   },
-  "login":{
+  "login": {
     "userName": "Username",
-    "password":"Password"
-
+    "password": "Password"
+  },
+  "teacher": {
+    "listTitle": "Teacher List",
+    "email": "Email",
+    "teacherName":"Teacher Name"
   }
- 
 }

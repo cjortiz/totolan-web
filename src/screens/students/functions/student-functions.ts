@@ -9,7 +9,6 @@ export const STUDENT_DEF_FILTER = (): StudentFilterData => {
     sortDirection: "descend",
     object: {},
   });
-  console.log(data);
   return data;
 };
 

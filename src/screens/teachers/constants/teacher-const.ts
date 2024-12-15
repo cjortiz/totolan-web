@@ -1,13 +1,14 @@
 import moment from "moment";
-import { StudentData } from "../views";
+import { TeacherData } from "../data";
 
-export const DEF_STUDENT_DATA: StudentData = {
+export const DEF_TEACHER_DATA: TeacherData = {
   id: undefined,
   firstName: "",
   lastName: "",
   middleName: "",
   address: "",
   gender: "",
+  email: "",
   birthDate: moment(),
   contactNum: "",
   mothersName: "",

@@ -2,6 +2,7 @@ import { MainLayout } from "../../common/layout/layout";
 import FacultyImg from "../../assets/images/faculties_img.jpg";
 
 export const Dashboard = () => {
+  console.log("called");
   return (
     <MainLayout>
       <div style={{ height: "50%" }}>

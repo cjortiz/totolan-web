@@ -32,7 +32,7 @@ const PrivateRoute = observer((props: { children: any }) => {
     return <Navigate to={PATHS.LOGIN.path} />;
   }
 
-  return <Route element={children}></Route>;
+  return <>{children}</>;
 });
 
 const PrivateRoutes = (
@@ -45,8 +45,12 @@ const PrivateRoutes = (
     }
   >
     {/* Dashboard and Profile Routes */}
-    <Route index path={PATHS.DASHBOARD.path} element={<Screens.Dashboard />} />
-    {/* <Route path={PATHS.PROFILE.path} element={<Screens.Profile />} /> */}
+    <Route index element={<Navigate to={PATHS.DASHBOARD.path} />} />
+    <Route
+      path={PATHS.DASHBOARD.path}
+      element={<Navigate to={PATHS.DASHBOARD.path} />}
+    />
+
     <Route path={PATHS.Students.path} element={<Screens.Students />} />
     <Route
       path={PATHS.GradeYearSetup.path}

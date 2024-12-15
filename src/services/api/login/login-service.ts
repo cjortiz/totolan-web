@@ -6,6 +6,7 @@ const login = async (values: LoginInputValue) => {
   return await axiosInstance
     .post("/login", values)
     .then((result: TotResponse<LoginInterface>) => {
+      console.log(result.data);
       return result.data;
     })
     .catch((error: TotError<TotResponse<LoginInterface>>) => {

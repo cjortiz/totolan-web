@@ -16,6 +16,7 @@ import SiriusButton from "../../common/component/button/tot-button";
 import { login } from "./login-operations";
 import { LoginInputValue, LoginInterface } from "./login.props";
 import { observer } from "mobx-react-lite";
+import { toJS } from "mobx";
 
 interface LoginDetailsInterface {
   userName: string;
@@ -35,11 +36,11 @@ export const Login = observer(() => {
       if (data) {
         console.log(data);
         authStore.setAuthCredentials(data);
-
         if (!data.token) {
           showMessage("error", translate("errorMessage.incorrectCredentials"));
         } else {
           authStore.setLoggedIn(data.token ? true : false);
+          navigate(PATHS.DASHBOARD.path);
         }
       }
     });

@@ -1,5 +1,5 @@
 import { Layout, Menu, MenuProps } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { PATHS } from "../../config";
 import Sider from "antd/es/layout/Sider";
 import { NavHeader } from "../../common/navbar";
@@ -126,11 +126,9 @@ export const Main = observer(({ children }: any) => {
           <div
             style={{
               height: "100%",
-              background: color.secondary01,
             }}
           >
-            {children}
-            {/* <AppRoutes /> */}
+            <Outlet />
           </div>
         </Layout>
       </Layout>

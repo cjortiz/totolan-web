@@ -16,9 +16,18 @@ export const axiosInstance: AxiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   async (request) => {
     // REQUEST HEADER
+    const authStore = JSON.parse(localStorage.root).authStore;
+    const token = authStore.accessToken;
+
+    // REFRESH TOKEN
+    if (token && !request.url.includes("refresh-token")) {
+      request.headers["Authorization"] = `Bearer ${token}`;
+    }
 
     // VALIDATE FORM DATA/REQUEST PARAM REQUEST
     const isFormData = request.data instanceof FormData;
+
+    console.log(request);
 
     // VALIDATE IF THE REQUEST HAS DATA TO APPLY ENCRYPTION
     if (request.data && !isFormData) {
@@ -27,7 +36,6 @@ axiosInstance.interceptors.request.use(
         request.data = {
           encodedEncryptedData: encryptPayload(JSON.stringify(request.data)),
         };
-        console.log(request.data);
       } catch (error) {
         return Promise.reject(error);
       }

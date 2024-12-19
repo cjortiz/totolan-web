@@ -10,7 +10,7 @@ export const DEF_TEACHER_DATA: TeacherData = {
   gender: "",
   email: "",
   birthDate: moment(),
-  contactNum: "",
+  contactNumber: "",
   mothersName: "",
   fathersName: "",
   idNumber: "",

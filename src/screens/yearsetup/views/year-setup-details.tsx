@@ -27,6 +27,7 @@ export const GradeYearDetails = observer((props: GradeYearDetailsProps) => {
     setActionType,
     setGradeYearData,
   } = props;
+  const { dropdownStore } = useStores();
   const [form] = Form.useForm();
   const { messageStore, appStateStore } = useStores();
   const { showMessage } = messageStore;
@@ -80,7 +81,8 @@ export const GradeYearDetails = observer((props: GradeYearDetailsProps) => {
       showMessage,
       setViewMode,
       setGradeYearData,
-      setLoading
+      setLoading,
+      setActionType
     );
     form.resetFields();
     setActionType(MainActionType.REFRESH);
@@ -133,8 +135,10 @@ export const GradeYearDetails = observer((props: GradeYearDetailsProps) => {
               value: gradeYearData?.teacherId,
               label: translate("year.instructor"),
               inputType: FormItemFieldType.DROPDOWN,
+              options: dropdownStore.teacherDropdown.options,
               hidden: false,
               width: "400px",
+              onSelect: (data) => setDataHandler({ teacherId: getS(data) }),
             },
           ]}
         />

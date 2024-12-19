@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   DEFAULT_DATA_LIST,
   MainActionType,
@@ -6,6 +6,7 @@ import {
   PaginatedResponseDto,
   PaginationDto,
   translate,
+  useStores,
   ViewMode,
 } from "../../common";
 import { StudentData, StudentList, StudentTableListInterface } from "./views";
@@ -22,6 +23,8 @@ export interface StudentFilterData extends PaginationDto {
 }
 
 export const Students = observer(() => {
+  const { dropdownStore, messageStore, appStateStore } = useStores();
+
   const [viewMode, setViewMode] = useState<ViewMode>(ViewMode.LIST);
   const [filterData, setFilterData] = useState<StudentFilterData>(
     STUDENT_DEF_FILTER()
@@ -34,6 +37,16 @@ export const Students = observer(() => {
     useState<PaginatedResponseDto<StudentTableListInterface[]>>(
       DEFAULT_DATA_LIST
     );
+
+  useEffect(() => {
+    dropdownStore.fetchDropdown({
+      queryUrl: "/section",
+      queryStore: "section-dropdown-store",
+      onError: () =>
+        messageStore.showMessage("error", "Teacher Dropdown fetch failed"),
+      setLoading: appStateStore.setLoading,
+    });
+  }, []);
 
   return (
     <MainLayout

@@ -2,6 +2,7 @@ import { ColumnsType } from "antd/es/table";
 import {
   CommonTable,
   DetailsLayout,
+  GENDER_OPTIONS,
   ListLayout,
   MainActionType,
   PaginatedResponseDto,
@@ -27,6 +28,7 @@ import {
   getS,
 } from "../../../utils/common-utils";
 import { observer } from "mobx-react-lite";
+import moment from "moment";
 
 interface StudentsListProps {
   viewMode: ViewMode;
@@ -51,10 +53,11 @@ export interface StudentTableListInterface {
   age: number;
   gradeYear: string;
   sex: string;
+  birthDate: Moment;
 }
 
 export interface StudentData {
-  id: string;
+  id: number;
   firstName: string;
   lastName: string;
   middleName: string;
@@ -65,6 +68,7 @@ export interface StudentData {
   mothersName: string;
   fathersName: string;
   idNumber: string;
+  section: string;
   image: string | undefined;
   imageName: string | undefined;
   isUploaded: boolean;
@@ -165,18 +169,28 @@ export const StudentList = observer((props: StudentsListProps) => {
         dataIndex: "age",
         key: "age",
         sorter: true,
+        render: (_, record) => {
+          console.log(record);
+          const birthDate = moment(record.birthDate);
+          const today = moment();
+          return `${today.diff(birthDate, "years")} yrs`;
+        },
       },
       {
         title: translate("student.tableTitles.gradeYear"),
         dataIndex: "gradeYear",
         key: "gradeYear",
         sorter: true,
+        render: (val) => {
+          return `Grade ${val}`;
+        },
       },
       {
         title: translate("student.tableTitles.sex"),
-        dataIndex: "sex",
-        key: "sex",
+        dataIndex: "gender",
+        key: "gender",
         sorter: true,
+        render: (val) => GENDER_OPTIONS[val].label,
       },
     ];
   };

@@ -1,6 +1,8 @@
 import { FormInstance } from "antd";
 import {
   DateFormat,
+  EMPTY_STRING,
+  MainActionType,
   PaginatedResponseDto,
   ShowMessageInterface,
   ViewMode,
@@ -10,7 +12,7 @@ import { StudentApi } from "../../../services/api/axios-students/students-servic
 import { StudentFilterData } from "../students";
 import { StudentData, StudentTableListInterface } from "../views";
 import moment from "moment";
-import { calculateAgeHandler } from "../functions/student-functions";
+import { GradeListInterface } from "../modals";
 
 export const fetchDataList = (
   filterData: StudentFilterData,
@@ -39,7 +41,8 @@ export const addNewStudent = (
   showMessage: ShowMessageInterface,
   setViewMode: (view: ViewMode) => void,
   setStudentData: (args: StudentData) => void,
-  setLoading: (loading: boolean) => void
+  setLoading: (loading: boolean) => void,
+  setActionType: (args: MainActionType) => void
 ) => {
   setLoading(true);
   StudentApi.addNewStudent(newStudent)
@@ -48,6 +51,7 @@ export const addNewStudent = (
         setStudentData(response.resultData);
         response.resultData.birthDate = moment(response.resultData.birthDate);
         form.setFieldsValue(response.resultData);
+        setActionType(MainActionType.REFRESH);
         setViewMode(ViewMode.VIEW);
       }
     })
@@ -67,10 +71,8 @@ export const fetchStudentById = (
   StudentApi.fetchStudentById(id)
     .then((response) => {
       if (response.isSuccess) {
-        console.log(response.resultData.birthDate);
         response.resultData.birthDate = moment(response.resultData.birthDate);
         setStudentData(response.resultData);
-        console.log(response.resultData);
         form.setFieldsValue(response.resultData);
         form.setFieldValue("idNumberDisplay", response.resultData.idNumber);
         setViewMode(ViewMode.VIEW);
@@ -78,4 +80,44 @@ export const fetchStudentById = (
     })
     .catch((error: any) => errorHandler(error, showMessage))
     .finally(() => setLoading(false));
+};
+
+export const fetchGrades = (
+  studentId: number,
+  showMessage: ShowMessageInterface,
+  setHideTable: (hidden: boolean) => void,
+  setTableListData: (data: GradeListInterface[]) => void,
+  setloading: (loading: boolean) => void
+) => {
+  const filterData = { studentId: studentId };
+  setloading(true);
+  StudentApi.fetchGrades(filterData)
+    .then((response) => {
+      if (response.isSuccess) {
+        setTableListData(response?.resultData);
+      }
+    })
+    .catch((error: any) => errorHandler(error, showMessage))
+    .finally(() => setloading(false));
+};
+
+export const submitGrades = (
+  gradesList: GradeListInterface[],
+  showMessage: ShowMessageInterface,
+  setLoading: (loading: boolean) => void,
+  closeModal: (args: boolean) => void,
+  setEditKeyString: (args: string) => void
+) => {
+  setLoading(true);
+  StudentApi.submitGrades(gradesList)
+    .then((response) => {
+      if (response.isSuccess) {
+        closeModal(false);
+      }
+    })
+    .catch((error: any) => errorHandler(error, showMessage))
+    .finally(() => {
+      setLoading(false);
+      setEditKeyString(EMPTY_STRING);
+    });
 };

@@ -31,6 +31,7 @@ export const TeacherSetup = observer(() => {
     useState<PaginatedResponseDto<TeacherTableListInterface[]>>(
       DEFAULT_DATA_LIST
     );
+
   return (
     <MainLayout
       title={translate("teacher.listTitle")}

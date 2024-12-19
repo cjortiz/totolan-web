@@ -21,7 +21,7 @@ import {
   TeacherTableListInterface,
 } from "../data";
 import { TotIcons } from "../../../common/icons/tot-icon";
-import { commonPaginationChangeHandler, getS } from "../../../utils";
+import { commonPaginationChangeHandler, getN, getS } from "../../../utils";
 import { ColumnsType } from "antd/es/table";
 import { color } from "../../../theme";
 import { fetchDataList } from "../operations";
@@ -102,6 +102,7 @@ export const TeacherList = observer((props: TeacherListProps) => {
         key: "sex",
         name: "sex",
         value: filterData.sex,
+        label: translate("student.details.gender"),
         type: SearchFieldType.Select,
         options: GENDER_OPTIONS,
         width: "150px",
@@ -133,7 +134,7 @@ export const TeacherList = observer((props: TeacherListProps) => {
         ),
       },
       {
-        title: translate("student.tableTitles.name"),
+        title: translate("teacher.teacherName"),
         dataIndex: "name",
         key: "name",
         sorter: true,
@@ -146,6 +147,7 @@ export const TeacherList = observer((props: TeacherListProps) => {
         dataIndex: "sex",
         key: "sex",
         sorter: true,
+        render: (val) => GENDER_OPTIONS[getN(val)]?.label,
       },
     ];
   };

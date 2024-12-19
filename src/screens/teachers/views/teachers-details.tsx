@@ -12,13 +12,14 @@ import {
   useStores,
   ViewMode,
 } from "../../../common";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { DEF_TEACHER_DATA } from "../constants";
 import TotInput from "../../../common/component/input/tot-input";
 import { color } from "../../../theme";
 import { getS } from "../../../utils";
 import { GradesModal } from "../../students/modals";
 import { addNewTeacher, fetchTeacherById } from "../operations";
+import { TeacherSectionModal, TeacherSubjectModal } from "../modals";
 
 export const TeacherDetails = observer((props: TeacherDetailsProps) => {
   const {
@@ -38,6 +39,9 @@ export const TeacherDetails = observer((props: TeacherDetailsProps) => {
   const { messageStore, appStateStore } = useStores();
   const { showMessage } = messageStore;
   const { setLoading } = appStateStore;
+
+  const [openSubjects, setOpenSubjects] = useState<boolean>(false);
+  const [openSections, setOpenSectionss] = useState<boolean>(false);
 
   useEffect(() => {
     switch (actionType) {
@@ -92,15 +96,30 @@ export const TeacherDetails = observer((props: TeacherDetailsProps) => {
       showMessage,
       setPageView,
       setTeacherData,
-      setLoading
+      setLoading,
+      setActionType
     );
     form.resetFields();
+  };
+
+  const teacherNameHandler = (): string => {
+    const middleInit = teacherData?.middleName
+      ? teacherData.middleName.at(0)
+      : "";
+    const fullName =
+      getS(teacherData.firstName).concat(" ") +
+      getS(middleInit).concat(". ") +
+      getS(teacherData.lastName);
+    return fullName;
   };
 
   return (
     <div
       style={{
+        height: "68vh",
         display: "flex",
+        minHeight: "68vh",
+        overflow: "auto",
         justifyContent: "space-between",
       }}
     >
@@ -113,7 +132,9 @@ export const TeacherDetails = observer((props: TeacherDetailsProps) => {
         }}
       >
         <TotFormItem
-          style={{ height: "75vh" }}
+          style={{
+            height: "75vh",
+          }}
           readonly={pageView === ViewMode.VIEW ? true : false}
           items={[
             {
@@ -235,14 +256,14 @@ export const TeacherDetails = observer((props: TeacherDetailsProps) => {
                 setTeacherDataHandler({ mothersName: val.target?.value }),
             },
             {
-              key: "contactNum",
-              name: "contactNum",
-              value: teacherData?.contactNum,
+              key: "contactNumber",
+              name: "contactNumber",
+              value: teacherData?.contactNumber,
               label: translate("student.details.contactNum"),
               inputType: FormItemFieldType.INPUT,
               width: "25rem",
               onBlur: (val) =>
-                setTeacherDataHandler({ contactNum: val.target?.value }),
+                setTeacherDataHandler({ contactNumber: val.target?.value }),
             },
             {
               key: "email",
@@ -259,6 +280,8 @@ export const TeacherDetails = observer((props: TeacherDetailsProps) => {
       </Form>
       <div
         style={{
+          position: "absolute",
+          left: "60%",
           width: "320px",
           border: "1px solid #999999",
           display: "flex",
@@ -334,18 +357,34 @@ export const TeacherDetails = observer((props: TeacherDetailsProps) => {
               ]}
             />
           </Form>
-          {/* <Button
+          <Button
             color="primary"
             style={{ color: "white", background: color.secondary01 }}
-            onClick={() => setOpenGrades(true)}
+            onClick={() => setOpenSubjects(true)}
           >
-            {translate("student.details.grades")}
+            {translate("teacher.subjects")}
           </Button>
-          <GradesModal
-            open={openGrades}
-            setOpen={setOpenGrades}
-            studentName={detailsForm.getFieldValue("studentName")}
-          /> */}
+          <Button
+            color="primary"
+            style={{ color: "white", background: color.secondary01 }}
+            onClick={() => setOpenSectionss(true)}
+          >
+            {translate("teacher.sections")}
+          </Button>
+          {openSubjects && (
+            <TeacherSubjectModal
+              open={openSubjects}
+              teacherName={teacherNameHandler()}
+              onClose={() => setOpenSubjects(false)}
+            />
+          )}
+          {openSections && (
+            <TeacherSectionModal
+              open={openSections}
+              teacherName={teacherNameHandler()}
+              onClose={() => setOpenSectionss(false)}
+            />
+          )}
         </div>
       </div>
     </div>

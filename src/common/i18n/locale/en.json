@@ -23,6 +23,8 @@
       "idNumber": "ID #",
       "studentName": "Student Name",
       "grades": "Grades",
+      "section": "Section",
+      "gradeYear": "Grade Year",
       "gradesTitle": "Edit {{studentsName}}'s grades"
     }
   },
@@ -113,6 +115,19 @@
   "teacher": {
     "listTitle": "Teacher List",
     "email": "Email",
-    "teacherName":"Teacher Name"
+    "teacherName": "Name",
+    "subjects": "Subjects",
+    "sections": "Sections",
+    "teacherSub": "{{teacher}}'s Subjects",
+    "teacherSec": "{{teacher}}'s Section"
+  },
+  "grades": {
+    "subjectName": "Subject",
+    "firstGrading": "1st Grading",
+    "secondGrading": "2nd Grading",
+    "thirdGrading": "3rd Grading",
+    "fourthGrading": "4th Grading",
+    "remarks": "Remarks",
+    "actions": "Edit"
   }
 }

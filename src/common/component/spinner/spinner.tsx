@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { useStores } from "../../models";
 import { color } from "../../../theme";
-import ClipLoader from "react-spinners/ClipLoader";
 import "./spinner.css";
 import { CircleSpinner } from "react-spinners-kit";
 

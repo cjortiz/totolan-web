@@ -15,7 +15,7 @@ export interface TeacherData {
   gender: string;
   birthDate: Moment;
   email: string;
-  contactNum: string;
+  contactNumber: string;
   mothersName: string;
   fathersName: string;
   idNumber: string;

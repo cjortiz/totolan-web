@@ -44,7 +44,7 @@ export const SummaryDetails = (props: SummaryProps) => {
             width={"25%"}
             footer={null}
             open={isOpenModal}
-            bodyStyle={summaryModalStyle}
+            style={summaryModalStyle}
             title={translate("common.summary")}
             onCancel={() => setIsOpenModal(false)}
           >

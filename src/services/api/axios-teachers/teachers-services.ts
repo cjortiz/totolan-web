@@ -1,5 +1,6 @@
 import {
   ApiResultModel,
+  DropdownResponseDto,
   PaginatedResponseDto,
   TotError,
   TotResponse,
@@ -22,6 +23,19 @@ const fetchStudentList = (
       return response?.data;
     })
     .catch((error: TotError<TotResponse<TeacherTableListInterface[]>>) => {
+      throw error.response?.data;
+    });
+};
+
+const fetchTeacherDropdown = (): Promise<
+  ApiResultModel<PaginatedResponseDto<DropdownResponseDto[]>>
+> => {
+  return axiosInstance
+    .post(`/teachers/drop-down`)
+    .then((response) => {
+      return response?.data;
+    })
+    .catch((error: TotError<TotResponse<DropdownResponseDto[]>>) => {
       throw error.response?.data;
     });
 };
@@ -56,4 +70,5 @@ export const TeachersApi = {
   addNewTeacher,
   fetchStudentList,
   fetchTeacherById,
+  fetchTeacherDropdown,
 };

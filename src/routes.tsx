@@ -39,9 +39,9 @@ const PrivateRoutes = (
   <Route
     path={PATHS.MAIN.path}
     element={
-      // <PrivateRoute>
-      <Screens.Main />
-      // </PrivateRoute>
+      <PrivateRoute>
+        <Screens.Main />
+      </PrivateRoute>
     }
   >
     {/* Dashboard and Profile Routes */}

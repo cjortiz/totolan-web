@@ -31,6 +31,7 @@ export const CommonTable = observer(
       pageSize,
       viewMode,
       totalSize,
+      hideCount,
       pageNumber,
       dataSource,
       expandable,
@@ -71,7 +72,7 @@ export const CommonTable = observer(
             onChange={onSort}
           />
         </div>
-        {dataSource && dataSource.length !== 0 && (
+        {dataSource && dataSource.length !== 0 && !hideCount && (
           <div
             style={footerWrapper}
             className={`tot-footer ${appStateStore.isDarkMode ? "dark" : ""}`}

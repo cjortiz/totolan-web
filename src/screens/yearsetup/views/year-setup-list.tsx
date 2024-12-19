@@ -12,11 +12,8 @@ import {
   SiriusTypography,
   useStores,
 } from "../../../common";
-import {
-  GraderYearListProps,
-  GradeYearListInterface,
-} from "../data";
-import { commonPaginationChangeHandler } from "../../../utils";
+import { GraderYearListProps, GradeYearListInterface } from "../data";
+import { commonPaginationChangeHandler, getS } from "../../../utils";
 import { ColumnsType } from "antd/es/table";
 import { color } from "../../../theme";
 import { TotIcons } from "../../../common/icons/tot-icon";
@@ -38,7 +35,7 @@ export const GradeYearList = observer((props: GraderYearListProps) => {
     setGradeYearData,
     setGradeYearList,
   } = props;
-  const { messageStore, appStateStore } = useStores();
+  const { messageStore, appStateStore, dropdownStore } = useStores();
   const { showMessage } = messageStore;
   const [selectedId, setSelectedId] = useState<number>();
 
@@ -84,7 +81,7 @@ export const GradeYearList = observer((props: GraderYearListProps) => {
               setSelectedId(record?.id);
             }}
           >
-            {record.gradeYear}
+            Grade {record.gradeYear}
           </SiriusTypography.BodyExtraSmall>
         ),
       },
@@ -100,8 +97,15 @@ export const GradeYearList = observer((props: GraderYearListProps) => {
         dataIndex: "teacherId",
         key: "teacherId",
         sorter: true,
+        render: (val) => findTeacherStringName(val),
       },
     ];
+  };
+
+  const findTeacherStringName = (val: string) => {
+    return dropdownStore.teacherDropdown.options.find(
+      (obj) => getS(obj.value) === val
+    )?.label;
   };
 
   const searchArea = (): SearchFieldProps[] => {
@@ -121,7 +125,7 @@ export const GradeYearList = observer((props: GraderYearListProps) => {
         name: "teacherId",
         value: filterData.teacherId,
         type: SearchFieldType.Select,
-        options: [],
+        options: dropdownStore.teacherDropdown.options,
         label: translate("section.teacher"),
         width: "150px",
         style: { marginTop: -5 },
@@ -159,7 +163,7 @@ export const GradeYearList = observer((props: GraderYearListProps) => {
               filter={filterData}
               setFilter={setFilterData}
               searchArea={searchArea()}
-              searchPanel={searchArea()}
+              searchPanel={[]}
             />
           )
         }

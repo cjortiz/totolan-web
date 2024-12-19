@@ -40,10 +40,10 @@ export const Main = observer(({ children }: any) => {
     getItem("Option 2", "2", <DesktopOutlined />),
     getItem("Student Setup", "sub1", <UserOutlined />, [
       getItem("Section", "3"),
-      getItem("Grades", "4"),
+      getItem("Students", "4"),
     ]),
     getItem("Teacher Setup", "sub2", <TeamOutlined />, [
-      getItem("Grade Year", "5"),
+      getItem("Subject Setup", "5"),
       getItem("Section Setup", "6"),
       getItem("Teacher Setup", "7"),
     ]),

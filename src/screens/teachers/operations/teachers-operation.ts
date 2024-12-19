@@ -1,5 +1,6 @@
 import { FormInstance } from "antd";
 import {
+  MainActionType,
   PaginatedResponseDto,
   ShowMessageInterface,
   ViewMode,
@@ -40,7 +41,8 @@ export const addNewTeacher = (
   showMessage: ShowMessageInterface,
   setViewMode: (view: ViewMode) => void,
   setStudentData: (args: TeacherData) => void,
-  setLoading: (loading: boolean) => void
+  setLoading: (loading: boolean) => void,
+  setActionType: (args: MainActionType) => void
 ) => {
   setLoading(true);
   TeachersApi.addNewTeacher(newTeacher)
@@ -49,6 +51,7 @@ export const addNewTeacher = (
         setStudentData(response.resultData);
         response.resultData.birthDate = moment(response.resultData.birthDate);
         form.setFieldsValue(response.resultData);
+        setActionType(MainActionType.REFRESH);
         setViewMode(ViewMode.VIEW);
       }
     })

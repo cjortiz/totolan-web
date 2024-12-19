@@ -6,6 +6,10 @@ import {
 } from "../../../common";
 import { StudentFilterData } from "../../../screens";
 import {
+  GradeFilterDto,
+  GradeListInterface,
+} from "../../../screens/students/modals";
+import {
   StudentData,
   StudentTableListInterface,
 } from "../../../screens/students/views";
@@ -52,7 +56,35 @@ const fetchStudentById = (
     });
 };
 
+const fetchGrades = (
+  filterData: GradeFilterDto
+): Promise<ApiResultModel<GradeListInterface[]>> => {
+  return axiosInstance
+    .post(`/grades/get-all`, filterData)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err: TotError<TotResponse<GradeListInterface[]>>) => {
+      throw err.response?.data;
+    });
+};
+
+const submitGrades = (
+  gradesList: GradeListInterface[]
+): Promise<ApiResultModel<GradeListInterface[]>> => {
+  return axiosInstance
+    .post(`/grades`, gradesList)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err: TotError<TotResponse<GradeListInterface[]>>) => {
+      throw err.response?.data;
+    });
+};
+
 export const StudentApi = {
+  fetchGrades,
+  submitGrades,
   addNewStudent,
   fetchStudentById,
   fetchStudentList,

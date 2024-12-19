@@ -6,4 +6,5 @@ export * from "./root-store/setup-root-store";
 // Non-root store models
 export * from "./app-state-store/app-state-store";
 export * from "./message-store/message-store";
+export * from "./dropdown-store";
 export * from "./auth-store";

@@ -53,7 +53,7 @@ export const StudentDetails = observer((props: StudentDetailsProps) => {
   } = props;
   const [form] = Form.useForm();
   const [detailsForm] = Form.useForm();
-  const { messageStore, appStateStore } = useStores();
+  const { messageStore, appStateStore, dropdownStore } = useStores();
   const { showMessage } = messageStore;
   const { setLoading } = appStateStore;
 
@@ -140,7 +140,8 @@ export const StudentDetails = observer((props: StudentDetailsProps) => {
       showMessage,
       setPageView,
       setStudentData,
-      setLoading
+      setLoading,
+      setActionType
     );
     form.resetFields();
   };
@@ -150,7 +151,10 @@ export const StudentDetails = observer((props: StudentDetailsProps) => {
   return (
     <div
       style={{
+        height: "68vh",
         display: "flex",
+        minHeight: "68vh",
+        overflow: "auto",
         justifyContent: "space-between",
       }}
     >
@@ -296,11 +300,23 @@ export const StudentDetails = observer((props: StudentDetailsProps) => {
               onBlur: (val) =>
                 setStudentHandler({ mothersName: val.target?.value }),
             },
+            {
+              key: "section",
+              name: "section",
+              value: studentData?.section,
+              label: translate("student.details.section"),
+              inputType: FormItemFieldType.DROPDOWN,
+              options: dropdownStore.sectionDropdown.options,
+              width: "25rem",
+              onSelect: (val) => setStudentHandler({ section: val }),
+            },
           ]}
         />
       </Form>
       <div
         style={{
+          position: "absolute",
+          left: "60%",
           width: "320px",
           border: "1px solid #999999",
           display: "flex",
@@ -385,6 +401,7 @@ export const StudentDetails = observer((props: StudentDetailsProps) => {
           </Button>
           <GradesModal
             open={openGrades}
+            studentId={studentData?.id}
             setOpen={setOpenGrades}
             studentName={detailsForm.getFieldValue("studentName")}
           />

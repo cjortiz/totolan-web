@@ -56,6 +56,7 @@ export interface TablePropertyProps<T> extends TableProps<T> {
    */
   rowValue?: (row: number) => void;
   halignColumns?: string[];
+  hideCount?: boolean;
 }
 
 export interface SummaryProps {

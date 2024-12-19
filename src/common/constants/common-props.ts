@@ -189,6 +189,11 @@ export interface PaginatedResponseDto<T> {
   summaryTotal?: number;
 }
 
+export interface DropdownResponseDto {
+  value: number;
+  label: string;
+}
+
 export interface SorterOptions {
   sortField: string;
   sortDirection: string;
@@ -199,7 +204,6 @@ export type ShowMessageInterface = (type: string, message: string) => void;
 export interface TotError<T> {
   response: TotResponse<T>;
 }
-
 
 export interface TotResponse<T> {
   data: ApiResultModel<T>;

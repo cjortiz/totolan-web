@@ -11,6 +11,7 @@ import {
   MessageStoreModel,
 } from "../message-store/message-store";
 import { AuthStoreModel, getDefaultAuthStoreModel } from "../auth-store";
+import { DropdownModel, getDefaultDropdownModel } from "../dropdown-store";
 
 /**
  * A RootStore model.
@@ -19,7 +20,8 @@ import { AuthStoreModel, getDefaultAuthStoreModel } from "../auth-store";
 export const RootStoreModel = types.model("RootStore").props({
   appStateStore: types.optional(AppStateStoreModel, getDefaultAppStateStoreModel()),
   messageStore: types.optional(MessageStoreModel,getDefaultMessageStoreModel),
-  authStore: types.optional(AuthStoreModel,getDefaultAuthStoreModel)
+  authStore: types.optional(AuthStoreModel,getDefaultAuthStoreModel),
+  dropdownStore:types.optional(DropdownModel,getDefaultDropdownModel),
 })
 
 /**

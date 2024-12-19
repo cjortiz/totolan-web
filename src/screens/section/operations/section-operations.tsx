@@ -1,5 +1,6 @@
 import { FormInstance } from "antd";
 import {
+  MainActionType,
   PaginatedResponseDto,
   ShowMessageInterface,
   ViewMode,
@@ -35,7 +36,8 @@ export const addNewData = (
   showMessage: ShowMessageInterface,
   setViewMode: (view: ViewMode) => void,
   setGradeYearData: (args: SectionSetupListInterface) => void,
-  setLoading: (loading: boolean) => void
+  setLoading: (loading: boolean) => void,
+  setActionType: (args: MainActionType) => void
 ) => {
   setLoading(true);
   SectionApi.addNewDetails(gradeYearData)
@@ -43,6 +45,7 @@ export const addNewData = (
       if (response.isSuccess) {
         setGradeYearData(response.resultData);
         form.setFieldsValue(response.resultData);
+        setActionType(MainActionType.REFRESH);
         setViewMode(ViewMode.VIEW);
       }
     })

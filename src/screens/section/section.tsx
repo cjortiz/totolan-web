@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ViewMode,
   MainActionType,
@@ -8,6 +8,7 @@ import {
   PaginatedResponseDto,
   DEFAULT_DATA_LIST,
   PaginationDto,
+  useStores,
 } from "../../common";
 import { SECTION_DEF_FILTER } from "./functions";
 import { SectionSetupList } from "./views";
@@ -33,6 +34,7 @@ export const DEFAULT_DATA: SectionSetupListInterface = {
 };
 
 export const SectionSetup = observer(() => {
+  const { dropdownStore, messageStore, appStateStore } = useStores();
   const [viewMode, setViewMode] = useState<ViewMode>(ViewMode.LIST);
   const [actionType, setActionType] = useState<MainActionType>(
     MainActionType.DEFAULT
@@ -48,6 +50,16 @@ export const SectionSetup = observer(() => {
     useState<PaginatedResponseDto<SectionSetupListInterface[]>>(
       DEFAULT_DATA_LIST
     );
+
+  useEffect(() => {
+    dropdownStore.fetchDropdown({
+      queryUrl: "/teachers",
+      queryStore: "teacher-dropdown-store",
+      onError: () =>
+        messageStore.showMessage("error", "Teacher Dropdown fetch failed"),
+      setLoading: appStateStore.setLoading,
+    });
+  }, []);
 
   return (
     <MainLayout

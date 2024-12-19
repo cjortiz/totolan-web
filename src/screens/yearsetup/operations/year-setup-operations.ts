@@ -2,6 +2,7 @@ import {
   ShowMessageInterface,
   PaginatedResponseDto,
   ViewMode,
+  MainActionType,
 } from "../../../common";
 import { errorHandler } from "../../../common/constants/error-handler";
 import { GradeYearApi } from "../../../services/api/axios-year-setup/year-setup-service";
@@ -35,7 +36,8 @@ export const addNewData = (
   showMessage: ShowMessageInterface,
   setViewMode: (view: ViewMode) => void,
   setGradeYearData: (args: GradeYearListInterface) => void,
-  setLoading: (loading: boolean) => void
+  setLoading: (loading: boolean) => void,
+  setActionType: (args: MainActionType) => void
 ) => {
   setLoading(true);
   GradeYearApi.addNewDetails(gradeYearData)
@@ -43,6 +45,7 @@ export const addNewData = (
       if (response.isSuccess) {
         setGradeYearData(response.resultData);
         form.setFieldsValue(response.resultData);
+        setActionType(MainActionType.REFRESH);
         setViewMode(ViewMode.VIEW);
       }
     })

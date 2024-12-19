@@ -15,7 +15,7 @@ import {
   PaginatedResponseDto,
 } from "../../../common";
 import { color } from "../../../theme";
-import { commonPaginationChangeHandler } from "../../../utils";
+import { commonPaginationChangeHandler, getS } from "../../../utils";
 import { useEffect, useState } from "react";
 import { TotIcons } from "../../../common/icons/tot-icon";
 import { SectionSetupFilterData, SectionSetupListInterface } from "../section";
@@ -52,9 +52,13 @@ export const SectionSetupList = observer((props: SectionSetupListProps) => {
     setSectionData,
     setSectionList,
   } = props;
-  const { messageStore, appStateStore } = useStores();
+  const { messageStore, appStateStore, dropdownStore } = useStores();
   const { showMessage } = messageStore;
   const [selectedId, setSelectedId] = useState<number>();
+
+  useEffect(() => {
+    fetchListHandler();
+  }, []);
 
   useEffect(() => {
     switch (actionType) {
@@ -122,8 +126,15 @@ export const SectionSetupList = observer((props: SectionSetupListProps) => {
         key: "adviserId",
         sorter: true,
         showSorterTooltip: false,
+        render: (val) => findTeacherStringName(val),
       },
     ];
+  };
+
+  const findTeacherStringName = (val: string) => {
+    return dropdownStore.teacherDropdown.options.find(
+      (obj) => getS(obj.value) === val
+    )?.label;
   };
 
   const searchArea = (): SearchFieldProps[] => {

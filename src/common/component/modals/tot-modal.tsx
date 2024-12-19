@@ -32,7 +32,7 @@ export const TotModal = observer((props: ModalProps) => {
       footer={footer}
       maskClosable={maskClosable}
       className={`tot-modal ${appStateStore.isDarkMode ? "dark" : ""}`}
-      bodyStyle={
+      style={
         fixedHeight
           ? bodyStyleModal({
               height: height ?? "",

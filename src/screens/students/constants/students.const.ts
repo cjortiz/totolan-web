@@ -16,4 +16,5 @@ export const DEF_STUDENT_DATA: StudentData = {
   image: "",
   imageName: "",
   isUploaded: false,
+  section: "",
 };

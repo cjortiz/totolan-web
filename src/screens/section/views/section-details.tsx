@@ -40,7 +40,7 @@ export const SectionSetupDetails = observer(
       setSectionData,
     } = props;
     const [form] = Form.useForm();
-    const { messageStore, appStateStore } = useStores();
+    const { messageStore, appStateStore, dropdownStore } = useStores();
     const { showMessage } = messageStore;
     const { setLoading } = appStateStore;
 
@@ -92,10 +92,10 @@ export const SectionSetupDetails = observer(
         showMessage,
         setViewMode,
         setSectionData,
-        setLoading
+        setLoading,
+        setActionType
       );
       form.resetFields();
-      setActionType(MainActionType.REFRESH);
     };
 
     const setDataHandler = (newProperties: object) => {
@@ -146,6 +146,8 @@ export const SectionSetupDetails = observer(
                 value: sectionData?.adviserId,
                 label: translate("year.instructor"),
                 inputType: FormItemFieldType.DROPDOWN,
+                options: dropdownStore.teacherDropdown.options,
+                onSelect: (data) => setDataHandler({ adviserId: getS(data) }),
                 hidden: false,
                 width: "400px",
               },

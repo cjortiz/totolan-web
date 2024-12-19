@@ -170,7 +170,6 @@ export const StudentList = observer((props: StudentsListProps) => {
         key: "age",
         sorter: true,
         render: (_, record) => {
-          console.log(record);
           const birthDate = moment(record.birthDate);
           const today = moment();
           return `${today.diff(birthDate, "years")} yrs`;

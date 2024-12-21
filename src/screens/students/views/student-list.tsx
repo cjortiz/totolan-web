@@ -2,6 +2,7 @@ import { ColumnsType } from "antd/es/table";
 import {
   CommonTable,
   DetailsLayout,
+  EMPTY_STRING,
   GENDER_OPTIONS,
   ListLayout,
   MainActionType,
@@ -170,9 +171,11 @@ export const StudentList = observer((props: StudentsListProps) => {
         key: "age",
         sorter: true,
         render: (_, record) => {
-          const birthDate = moment(record.birthDate);
-          const today = moment();
-          return `${today.diff(birthDate, "years")} yrs`;
+          if (record.birthDate) {
+            const birthDate = moment(record?.birthDate);
+            const today = moment();
+            return `${today.diff(birthDate, "years")} yrs`;
+          }
         },
       },
       {
@@ -189,7 +192,7 @@ export const StudentList = observer((props: StudentsListProps) => {
         dataIndex: "gender",
         key: "gender",
         sorter: true,
-        render: (val) => GENDER_OPTIONS[val].label,
+        render: (val) => GENDER_OPTIONS[val]?.label,
       },
     ];
   };

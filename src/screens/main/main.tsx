@@ -3,8 +3,6 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { PATHS } from "../../config";
 import Sider from "antd/es/layout/Sider";
 import { NavHeader } from "../../common/navbar";
-import { AppRoutes } from "../../routes";
-import { color } from "../../theme";
 import { useState } from "react";
 import {
   PieChartOutlined,
@@ -97,7 +95,6 @@ export const Main = observer(({ children }: any) => {
             <div>
               <Menu
                 theme="dark"
-                defaultSelectedKeys={["1"]}
                 mode="inline"
                 items={items}
                 onClick={({ key }) => handleMenuClick(key)}

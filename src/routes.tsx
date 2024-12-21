@@ -46,10 +46,7 @@ const PrivateRoutes = (
   >
     {/* Dashboard and Profile Routes */}
     <Route index element={<Navigate to={PATHS.DASHBOARD.path} />} />
-    <Route
-      path={PATHS.DASHBOARD.path}
-      element={<Navigate to={PATHS.DASHBOARD.path} />}
-    />
+    <Route path={PATHS.DASHBOARD.path} element={<Screens.Dashboard />} />
 
     <Route path={PATHS.Students.path} element={<Screens.Students />} />
     <Route
